@@ -349,6 +349,18 @@ class Trainer:
         self.smoothing_weight = smoothing_weight
         self.smoothing_tau = smoothing_tau
 
+        if num_R == 0:
+            refinement_tag = "PGonly"
+        else:
+            refinement_tag = refinement_input
+
+        self.checkpoint_tag = (
+            f"R{num_R}"
+            f"_{refinement_tag}"
+            f"_pw{float(bce_pos_weight):g}"
+            f"_s{float(smoothing_weight):g}"
+        )
+
         # Checkpoint policy.
         # save_best_only=True: only save best.model based on validation mAP.
         # save_every=N: when save_best_only=False, save epoch checkpoints every N epochs.
@@ -369,8 +381,32 @@ class Trainer:
                 )
 
         os.makedirs("logs", exist_ok=True)
+
+        
         logger.add("logs/" + str(dataset) + "_" + str(split) + "_{time}.log")
         logger.add(sys.stdout, colorize=True, format="{message}")
+
+        logger.info("=" * 80)
+        logger.info("Experiment Configuration")
+        logger.info("=" * 80)
+
+        logger.info(f"dataset = {dataset}")
+        logger.info(f"split = {split}")
+
+        logger.info(f"num_classes = {num_classes}")
+        logger.info(f"features_dim = {dim}")
+        logger.info(f"num_f_maps = {num_f_maps}")
+
+        logger.info(f"num_layers_PG = {num_layers_PG}")
+        logger.info(f"num_layers_R = {num_layers_R}")
+        logger.info(f"num_R = {num_R}")
+
+        logger.info(f"refinement_input = {refinement_input}")
+
+        logger.info(f"bce_pos_weight = {bce_pos_weight}")
+        logger.info(f"smoothing_weight = {smoothing_weight}")
+        logger.info(f"smoothing_tau = {smoothing_tau}")
+
 
     def _prepare_target_and_mask(
         self,
@@ -575,7 +611,7 @@ class Trainer:
                 and ((epoch + 1) % self.save_every == 0 or (epoch + 1) == num_epochs)
             )
             if should_save_epoch:
-                torch.save(self.model.state_dict(), os.path.join(save_dir, f"epoch-{epoch + 1}.model"))
+                torch.save(self.model.state_dict(), os.path.join(save_dir, f"epoch-{epoch + 1}_{self.checkpoint_tag}.model"))
                 if self.save_optimizer:
                     torch.save(optimizer.state_dict(), os.path.join(save_dir, f"epoch-{epoch + 1}.opt"))
 
@@ -583,9 +619,21 @@ class Trainer:
                 val_mAP, _ = self.validate(batch_gen_val, device)
                 if val_mAP > best_val_mAP:
                     best_val_mAP = val_mAP
-                    torch.save(self.model.state_dict(), os.path.join(save_dir, "best.model"))
+                    checkpoint_name = f"best_{self.checkpoint_tag}.model"
+                    checkpoint_path = os.path.join(
+                        save_dir,
+                        checkpoint_name
+                    )
+                    torch.save(
+                        self.model.state_dict(),
+                        checkpoint_path
+                    )
                     if self.save_optimizer:
                         torch.save(optimizer.state_dict(), os.path.join(save_dir, "best.opt"))
+                logger.info(
+                    f"New best checkpoint saved: "
+                    f"{checkpoint_name}"
+                )
                 logger.info(
                     "[epoch %d]: epoch loss = %.6f, train mAP = %.6f, val mAP = %.6f"
                     % (epoch + 1, mean_epoch_loss, train_mAP, val_mAP)
