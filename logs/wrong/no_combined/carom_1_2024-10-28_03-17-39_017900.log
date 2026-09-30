@@ -1,0 +1,46 @@
+2024-10-28 03:17:57.408 | INFO     | model:train:191 - [epoch 1]: training loss = 3.254452,   validation loss = 1.407283,   validation mAP = 0.069721
+2024-10-28 03:17:57.409 | INFO     | model:train:198 - New best validation mAP: 0.0697
+2024-10-28 03:18:19.073 | INFO     | model:train:191 - [epoch 2]: training loss = 1.287013,   validation loss = 0.761987,   validation mAP = 0.062410
+2024-10-28 03:18:40.425 | INFO     | model:train:191 - [epoch 3]: training loss = 0.843483,   validation loss = 0.717372,   validation mAP = 0.063007
+2024-10-28 03:19:02.537 | INFO     | model:train:191 - [epoch 4]: training loss = 0.739715,   validation loss = 0.702242,   validation mAP = 0.058192
+2024-10-28 03:19:24.828 | INFO     | model:train:191 - [epoch 5]: training loss = 0.694412,   validation loss = 0.696364,   validation mAP = 0.062830
+2024-10-28 03:19:46.690 | INFO     | model:train:191 - [epoch 6]: training loss = 0.664289,   validation loss = 0.687433,   validation mAP = 0.057603
+2024-10-28 03:20:07.287 | INFO     | model:train:191 - [epoch 7]: training loss = 0.639097,   validation loss = 0.677377,   validation mAP = 0.057395
+2024-10-28 03:20:27.048 | INFO     | model:train:191 - [epoch 8]: training loss = 0.626330,   validation loss = 0.678437,   validation mAP = 0.056406
+2024-10-28 03:20:46.257 | INFO     | model:train:191 - [epoch 9]: training loss = 0.613579,   validation loss = 0.671689,   validation mAP = 0.056307
+2024-10-28 03:21:05.872 | INFO     | model:train:191 - [epoch 10]: training loss = 0.602386,   validation loss = 0.670252,   validation mAP = 0.056861
+2024-10-28 03:21:24.736 | INFO     | model:train:191 - [epoch 11]: training loss = 0.597785,   validation loss = 0.666909,   validation mAP = 0.057887
+2024-10-28 03:21:44.280 | INFO     | model:train:191 - [epoch 12]: training loss = 0.588589,   validation loss = 0.668191,   validation mAP = 0.056227
+2024-10-28 03:22:03.435 | INFO     | model:train:191 - [epoch 13]: training loss = 0.584568,   validation loss = 0.669194,   validation mAP = 0.058524
+2024-10-28 03:22:23.209 | INFO     | model:train:191 - [epoch 14]: training loss = 0.577429,   validation loss = 0.670083,   validation mAP = 0.057798
+2024-10-28 03:22:42.940 | INFO     | model:train:191 - [epoch 15]: training loss = 0.574964,   validation loss = 0.665066,   validation mAP = 0.056834
+2024-10-28 03:23:01.955 | INFO     | model:train:191 - [epoch 16]: training loss = 0.568113,   validation loss = 0.664406,   validation mAP = 0.058215
+2024-10-28 03:23:21.990 | INFO     | model:train:191 - [epoch 17]: training loss = 0.564899,   validation loss = 0.659768,   validation mAP = 0.057759
+2024-10-28 03:23:41.104 | INFO     | model:train:191 - [epoch 18]: training loss = 0.560628,   validation loss = 0.664360,   validation mAP = 0.060136
+2024-10-28 03:23:57.570 | INFO     | model:train:191 - [epoch 19]: training loss = 0.561882,   validation loss = 0.660585,   validation mAP = 0.057690
+2024-10-28 03:24:14.019 | INFO     | model:train:191 - [epoch 20]: training loss = 0.554447,   validation loss = 0.668634,   validation mAP = 0.059199
+2024-10-28 03:24:30.388 | INFO     | model:train:191 - [epoch 21]: training loss = 0.551899,   validation loss = 0.656651,   validation mAP = 0.059820
+2024-10-28 03:24:46.988 | INFO     | model:train:191 - [epoch 22]: training loss = 0.550901,   validation loss = 0.655773,   validation mAP = 0.060815
+2024-10-28 03:25:03.090 | INFO     | model:train:191 - [epoch 23]: training loss = 0.550166,   validation loss = 0.658842,   validation mAP = 0.059174
+2024-10-28 03:25:19.498 | INFO     | model:train:191 - [epoch 24]: training loss = 0.548222,   validation loss = 0.654706,   validation mAP = 0.060775
+2024-10-28 03:25:35.571 | INFO     | model:train:191 - [epoch 25]: training loss = 0.545176,   validation loss = 0.673410,   validation mAP = 0.062196
+2024-10-28 03:25:51.959 | INFO     | model:train:191 - [epoch 26]: training loss = 0.543297,   validation loss = 0.657561,   validation mAP = 0.059278
+2024-10-28 03:26:08.123 | INFO     | model:train:191 - [epoch 27]: training loss = 0.540766,   validation loss = 0.655565,   validation mAP = 0.062078
+2024-10-28 03:26:24.320 | INFO     | model:train:191 - [epoch 28]: training loss = 0.537490,   validation loss = 0.660196,   validation mAP = 0.062283
+2024-10-28 03:26:40.396 | INFO     | model:train:191 - [epoch 29]: training loss = 0.539417,   validation loss = 0.655475,   validation mAP = 0.063036
+2024-10-28 03:26:56.249 | INFO     | model:train:191 - [epoch 30]: training loss = 0.534919,   validation loss = 0.657552,   validation mAP = 0.064304
+2024-10-28 03:27:12.270 | INFO     | model:train:191 - [epoch 31]: training loss = 0.540746,   validation loss = 0.669617,   validation mAP = 0.061111
+2024-10-28 03:27:28.408 | INFO     | model:train:191 - [epoch 32]: training loss = 0.537621,   validation loss = 0.651472,   validation mAP = 0.060637
+2024-10-28 03:27:44.535 | INFO     | model:train:191 - [epoch 33]: training loss = 0.532139,   validation loss = 0.664469,   validation mAP = 0.061709
+2024-10-28 03:28:00.711 | INFO     | model:train:191 - [epoch 34]: training loss = 0.530276,   validation loss = 0.663502,   validation mAP = 0.063649
+2024-10-28 03:28:16.507 | INFO     | model:train:191 - [epoch 35]: training loss = 0.529491,   validation loss = 0.653901,   validation mAP = 0.064134
+2024-10-28 03:28:32.542 | INFO     | model:train:191 - [epoch 36]: training loss = 0.529724,   validation loss = 0.661274,   validation mAP = 0.061432
+2024-10-28 03:28:48.451 | INFO     | model:train:191 - [epoch 37]: training loss = 0.528163,   validation loss = 0.655789,   validation mAP = 0.068520
+2024-10-28 03:29:04.541 | INFO     | model:train:191 - [epoch 38]: training loss = 0.528310,   validation loss = 0.651573,   validation mAP = 0.068691
+2024-10-28 03:29:20.439 | INFO     | model:train:191 - [epoch 39]: training loss = 0.526383,   validation loss = 0.681164,   validation mAP = 0.069924
+2024-10-28 03:29:20.440 | INFO     | model:train:198 - New best validation mAP: 0.0699
+2024-10-28 03:29:36.555 | INFO     | model:train:191 - [epoch 40]: training loss = 0.528161,   validation loss = 0.656586,   validation mAP = 0.064261
+2024-10-28 03:29:52.483 | INFO     | model:train:191 - [epoch 41]: training loss = 0.524403,   validation loss = 0.661278,   validation mAP = 0.069164
+2024-10-28 03:30:08.609 | INFO     | model:train:191 - [epoch 42]: training loss = 0.522958,   validation loss = 0.658046,   validation mAP = 0.070631
+2024-10-28 03:30:08.609 | INFO     | model:train:198 - New best validation mAP: 0.0706
+2024-10-28 03:30:24.327 | INFO     | model:train:191 - [epoch 43]: training loss = 0.521779,   validation loss = 0.660378,   validation mAP = 0.064363

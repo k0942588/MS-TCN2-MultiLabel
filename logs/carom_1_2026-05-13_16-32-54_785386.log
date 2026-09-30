@@ -1,0 +1,10 @@
+2026-05-13 16:33:06.716 | INFO     | model:train:562 - GT positive rate 0.056374
+2026-05-13 16:33:07.911 | INFO     | model:train:584 - [epoch 1]: epoch loss = 2.462543, train mAP = 0.046915, val mAP = 0.046851
+2026-05-13 16:33:16.073 | INFO     | model:train:562 - GT positive rate 0.051879
+2026-05-13 16:33:17.255 | INFO     | model:train:584 - [epoch 2]: epoch loss = 1.782875, train mAP = 0.048029, val mAP = 0.047517
+2026-05-13 16:33:25.588 | INFO     | model:train:562 - GT positive rate 0.047665
+2026-05-13 16:33:26.827 | INFO     | model:train:584 - [epoch 3]: epoch loss = 1.294023, train mAP = 0.048430, val mAP = 0.048325
+2026-05-13 16:33:34.753 | INFO     | model:train:562 - GT positive rate 0.047629
+2026-05-13 16:33:35.786 | INFO     | model:train:584 - [epoch 4]: epoch loss = 0.990520, train mAP = 0.046822, val mAP = 0.048266
+2026-05-13 16:33:43.294 | INFO     | model:train:562 - GT positive rate 0.056800
+2026-05-13 16:33:44.331 | INFO     | model:train:584 - [epoch 5]: epoch loss = 0.916873, train mAP = 0.048380, val mAP = 0.047746

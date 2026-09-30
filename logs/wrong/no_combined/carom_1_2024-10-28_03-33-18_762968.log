@@ -1,0 +1,2 @@
+2024-10-28 03:33:36.475 | INFO     | model:train:191 - [epoch 1]: training loss = 3.254452,   training mAP = 0.037513,   validation loss = 1.407283,   validation mAP = 0.069721
+2024-10-28 03:33:36.475 | INFO     | model:train:198 - New best validation mAP: 0.0697

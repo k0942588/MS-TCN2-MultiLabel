@@ -1,0 +1,461 @@
+2024-11-25 20:45:48.738 | INFO     | model:train:212 - [epoch 1]: training loss = 2434784.738812, training mAP = 0.036892, validation mAP = 0.032877
+2024-11-25 20:45:51.452 | INFO     | model:train:220 - New best validation mAP: 0.0329
+2024-11-25 20:48:04.664 | INFO     | model:train:212 - [epoch 2]: training loss = 627661.305740, training mAP = 0.038669, validation mAP = 0.035143
+2024-11-25 20:48:04.746 | INFO     | model:train:220 - New best validation mAP: 0.0351
+2024-11-25 20:50:33.678 | INFO     | model:train:212 - [epoch 3]: training loss = 458063.778128, training mAP = 0.038404, validation mAP = 0.036957
+2024-11-25 20:50:33.773 | INFO     | model:train:220 - New best validation mAP: 0.0370
+2024-11-25 20:53:03.058 | INFO     | model:train:212 - [epoch 4]: training loss = 388868.201173, training mAP = 0.039810, validation mAP = 0.039666
+2024-11-25 20:53:06.221 | INFO     | model:train:220 - New best validation mAP: 0.0397
+2024-11-25 20:55:23.982 | INFO     | model:train:212 - [epoch 5]: training loss = 357499.032151, training mAP = 0.042115, validation mAP = 0.041885
+2024-11-25 20:55:24.057 | INFO     | model:train:220 - New best validation mAP: 0.0419
+2024-11-25 20:57:34.364 | INFO     | model:train:212 - [epoch 6]: training loss = 345826.694358, training mAP = 0.042759, validation mAP = 0.047206
+2024-11-25 20:57:34.469 | INFO     | model:train:220 - New best validation mAP: 0.0472
+2024-11-25 20:59:43.779 | INFO     | model:train:212 - [epoch 7]: training loss = 344390.557208, training mAP = 0.044386, validation mAP = 0.048797
+2024-11-25 20:59:45.805 | INFO     | model:train:220 - New best validation mAP: 0.0488
+2024-11-25 21:01:52.433 | INFO     | model:train:212 - [epoch 8]: training loss = 337815.112690, training mAP = 0.044999, validation mAP = 0.053213
+2024-11-25 21:01:52.521 | INFO     | model:train:220 - New best validation mAP: 0.0532
+2024-11-25 21:04:01.237 | INFO     | model:train:212 - [epoch 9]: training loss = 337780.696026, training mAP = 0.048299, validation mAP = 0.056559
+2024-11-25 21:04:01.312 | INFO     | model:train:220 - New best validation mAP: 0.0566
+2024-11-25 21:06:12.853 | INFO     | model:train:212 - [epoch 10]: training loss = 327798.770058, training mAP = 0.050849, validation mAP = 0.059655
+2024-11-25 21:06:15.737 | INFO     | model:train:220 - New best validation mAP: 0.0597
+2024-11-25 21:08:22.570 | INFO     | model:train:212 - [epoch 11]: training loss = 326199.149852, training mAP = 0.053156, validation mAP = 0.062529
+2024-11-25 21:08:22.650 | INFO     | model:train:220 - New best validation mAP: 0.0625
+2024-11-25 21:10:32.713 | INFO     | model:train:212 - [epoch 12]: training loss = 321819.960058, training mAP = 0.055353, validation mAP = 0.065325
+2024-11-25 21:10:32.790 | INFO     | model:train:220 - New best validation mAP: 0.0653
+2024-11-25 21:12:41.295 | INFO     | model:train:212 - [epoch 13]: training loss = 322912.097668, training mAP = 0.055499, validation mAP = 0.068320
+2024-11-25 21:12:43.208 | INFO     | model:train:220 - New best validation mAP: 0.0683
+2024-11-25 21:14:49.010 | INFO     | model:train:212 - [epoch 14]: training loss = 322088.338915, training mAP = 0.057332, validation mAP = 0.069272
+2024-11-25 21:14:49.072 | INFO     | model:train:220 - New best validation mAP: 0.0693
+2024-11-25 21:16:57.179 | INFO     | model:train:212 - [epoch 15]: training loss = 316936.683892, training mAP = 0.058246, validation mAP = 0.071617
+2024-11-25 21:16:57.262 | INFO     | model:train:220 - New best validation mAP: 0.0716
+2024-11-25 21:19:17.861 | INFO     | model:train:212 - [epoch 16]: training loss = 320277.154278, training mAP = 0.059034, validation mAP = 0.073553
+2024-11-25 21:19:20.894 | INFO     | model:train:220 - New best validation mAP: 0.0736
+2024-11-25 21:21:45.694 | INFO     | model:train:212 - [epoch 17]: training loss = 319355.285722, training mAP = 0.056473, validation mAP = 0.068886
+2024-11-25 21:24:07.881 | INFO     | model:train:212 - [epoch 18]: training loss = 315810.956260, training mAP = 0.063014, validation mAP = 0.079660
+2024-11-25 21:24:10.576 | INFO     | model:train:220 - New best validation mAP: 0.0797
+2024-11-25 21:26:28.748 | INFO     | model:train:212 - [epoch 19]: training loss = 315126.425405, training mAP = 0.065468, validation mAP = 0.084603
+2024-11-25 21:26:28.869 | INFO     | model:train:220 - New best validation mAP: 0.0846
+2024-11-25 21:28:42.152 | INFO     | model:train:212 - [epoch 20]: training loss = 312648.840660, training mAP = 0.068906, validation mAP = 0.095651
+2024-11-25 21:28:45.545 | INFO     | model:train:220 - New best validation mAP: 0.0957
+2024-11-25 21:30:51.264 | INFO     | model:train:212 - [epoch 21]: training loss = 309668.325957, training mAP = 0.072155, validation mAP = 0.100641
+2024-11-25 21:30:53.765 | INFO     | model:train:220 - New best validation mAP: 0.1006
+2024-11-25 21:32:58.303 | INFO     | model:train:212 - [epoch 22]: training loss = 301700.177250, training mAP = 0.081685, validation mAP = 0.107786
+2024-11-25 21:32:58.387 | INFO     | model:train:220 - New best validation mAP: 0.1078
+2024-11-25 21:35:04.138 | INFO     | model:train:212 - [epoch 23]: training loss = 318587.732792, training mAP = 0.067626, validation mAP = 0.100729
+2024-11-25 21:37:09.366 | INFO     | model:train:212 - [epoch 24]: training loss = 305650.608940, training mAP = 0.081466, validation mAP = 0.117988
+2024-11-25 21:37:09.437 | INFO     | model:train:220 - New best validation mAP: 0.1180
+2024-11-25 21:39:13.326 | INFO     | model:train:212 - [epoch 25]: training loss = 300507.573196, training mAP = 0.088746, validation mAP = 0.123550
+2024-11-25 21:39:15.015 | INFO     | model:train:220 - New best validation mAP: 0.1236
+2024-11-25 21:41:20.742 | INFO     | model:train:212 - [epoch 26]: training loss = 307649.466925, training mAP = 0.082189, validation mAP = 0.104225
+2024-11-25 21:43:27.098 | INFO     | model:train:212 - [epoch 27]: training loss = 306065.067579, training mAP = 0.085871, validation mAP = 0.122799
+2024-11-25 21:45:34.528 | INFO     | model:train:212 - [epoch 28]: training loss = 306671.369791, training mAP = 0.088831, validation mAP = 0.126418
+2024-11-25 21:45:37.037 | INFO     | model:train:220 - New best validation mAP: 0.1264
+2024-11-25 21:47:45.920 | INFO     | model:train:212 - [epoch 29]: training loss = 306286.560874, training mAP = 0.083300, validation mAP = 0.122681
+2024-11-25 21:50:03.052 | INFO     | model:train:212 - [epoch 30]: training loss = 306903.675986, training mAP = 0.087758, validation mAP = 0.125160
+2024-11-25 21:52:28.142 | INFO     | model:train:212 - [epoch 31]: training loss = 302309.174706, training mAP = 0.095825, validation mAP = 0.121938
+2024-11-25 21:54:50.467 | INFO     | model:train:212 - [epoch 32]: training loss = 306965.973278, training mAP = 0.088148, validation mAP = 0.127308
+2024-11-25 21:54:50.542 | INFO     | model:train:220 - New best validation mAP: 0.1273
+2024-11-25 21:57:09.032 | INFO     | model:train:212 - [epoch 33]: training loss = 297782.839055, training mAP = 0.104291, validation mAP = 0.124668
+2024-11-25 21:59:18.553 | INFO     | model:train:212 - [epoch 34]: training loss = 302281.740341, training mAP = 0.097061, validation mAP = 0.123115
+2024-11-25 22:01:29.228 | INFO     | model:train:212 - [epoch 35]: training loss = 296982.746216, training mAP = 0.103117, validation mAP = 0.132588
+2024-11-25 22:01:29.303 | INFO     | model:train:220 - New best validation mAP: 0.1326
+2024-11-25 22:03:39.231 | INFO     | model:train:212 - [epoch 36]: training loss = 293408.828164, training mAP = 0.106200, validation mAP = 0.128733
+2024-11-25 22:05:50.660 | INFO     | model:train:212 - [epoch 37]: training loss = 290289.943789, training mAP = 0.113608, validation mAP = 0.137190
+2024-11-25 22:05:50.732 | INFO     | model:train:220 - New best validation mAP: 0.1372
+2024-11-25 22:07:58.390 | INFO     | model:train:212 - [epoch 38]: training loss = 295266.966969, training mAP = 0.111643, validation mAP = 0.128864
+2024-11-25 22:10:05.162 | INFO     | model:train:212 - [epoch 39]: training loss = 297699.341169, training mAP = 0.115962, validation mAP = 0.136431
+2024-11-25 22:12:14.548 | INFO     | model:train:212 - [epoch 40]: training loss = 288319.717339, training mAP = 0.123580, validation mAP = 0.135571
+2024-11-25 22:14:22.967 | INFO     | model:train:212 - [epoch 41]: training loss = 291026.689903, training mAP = 0.126374, validation mAP = 0.132844
+2024-11-25 22:16:31.325 | INFO     | model:train:212 - [epoch 42]: training loss = 291885.442677, training mAP = 0.125143, validation mAP = 0.134699
+2024-11-25 22:18:53.259 | INFO     | model:train:212 - [epoch 43]: training loss = 307413.124317, training mAP = 0.109589, validation mAP = 0.128741
+2024-11-25 22:21:18.321 | INFO     | model:train:212 - [epoch 44]: training loss = 299608.672629, training mAP = 0.114054, validation mAP = 0.133119
+2024-11-25 22:25:23.242 | INFO     | model:train:212 - [epoch 45]: training loss = 279818.069594, training mAP = 0.136595, validation mAP = 0.141480
+2024-11-25 22:25:23.315 | INFO     | model:train:220 - New best validation mAP: 0.1415
+2024-11-25 22:29:47.768 | INFO     | model:train:212 - [epoch 46]: training loss = 281990.518141, training mAP = 0.138538, validation mAP = 0.139183
+2024-11-25 22:34:11.452 | INFO     | model:train:212 - [epoch 47]: training loss = 286610.748881, training mAP = 0.130322, validation mAP = 0.125055
+2024-11-25 22:36:30.707 | INFO     | model:train:212 - [epoch 48]: training loss = 285669.283427, training mAP = 0.135018, validation mAP = 0.141301
+2024-11-25 22:38:40.177 | INFO     | model:train:212 - [epoch 49]: training loss = 280648.998457, training mAP = 0.143727, validation mAP = 0.140945
+2024-11-25 22:40:50.341 | INFO     | model:train:212 - [epoch 50]: training loss = 274671.741890, training mAP = 0.151184, validation mAP = 0.139796
+2024-11-25 22:43:00.800 | INFO     | model:train:212 - [epoch 51]: training loss = 286489.619125, training mAP = 0.136566, validation mAP = 0.140037
+2024-11-25 22:45:09.530 | INFO     | model:train:212 - [epoch 52]: training loss = 275827.179357, training mAP = 0.149905, validation mAP = 0.140531
+2024-11-25 22:47:23.229 | INFO     | model:train:212 - [epoch 53]: training loss = 298663.193857, training mAP = 0.134856, validation mAP = 0.137647
+2024-11-25 22:49:44.702 | INFO     | model:train:212 - [epoch 54]: training loss = 284774.858745, training mAP = 0.144923, validation mAP = 0.146270
+2024-11-25 22:49:44.774 | INFO     | model:train:220 - New best validation mAP: 0.1463
+2024-11-25 22:52:18.742 | INFO     | model:train:212 - [epoch 55]: training loss = 274229.831904, training mAP = 0.154041, validation mAP = 0.140596
+2024-11-25 22:54:38.854 | INFO     | model:train:212 - [epoch 56]: training loss = 274158.265636, training mAP = 0.157256, validation mAP = 0.146700
+2024-11-25 22:54:38.953 | INFO     | model:train:220 - New best validation mAP: 0.1467
+2024-11-25 22:57:01.074 | INFO     | model:train:212 - [epoch 57]: training loss = 271160.543281, training mAP = 0.159067, validation mAP = 0.126405
+2024-11-25 22:59:11.452 | INFO     | model:train:212 - [epoch 58]: training loss = 279835.454190, training mAP = 0.146228, validation mAP = 0.145364
+2024-11-25 23:01:21.542 | INFO     | model:train:212 - [epoch 59]: training loss = 275135.224695, training mAP = 0.154897, validation mAP = 0.140658
+2024-11-25 23:03:31.742 | INFO     | model:train:212 - [epoch 60]: training loss = 273393.198063, training mAP = 0.157465, validation mAP = 0.151354
+2024-11-25 23:03:34.624 | INFO     | model:train:220 - New best validation mAP: 0.1514
+2024-11-25 23:05:45.287 | INFO     | model:train:212 - [epoch 61]: training loss = 282402.393612, training mAP = 0.150078, validation mAP = 0.144813
+2024-11-25 23:07:55.659 | INFO     | model:train:212 - [epoch 62]: training loss = 268467.492861, training mAP = 0.162723, validation mAP = 0.142734
+2024-11-25 23:10:03.691 | INFO     | model:train:212 - [epoch 63]: training loss = 276912.742895, training mAP = 0.157053, validation mAP = 0.144086
+2024-11-25 23:12:12.314 | INFO     | model:train:212 - [epoch 64]: training loss = 269972.497300, training mAP = 0.166058, validation mAP = 0.153629
+2024-11-25 23:12:12.393 | INFO     | model:train:220 - New best validation mAP: 0.1536
+2024-11-25 23:14:20.385 | INFO     | model:train:212 - [epoch 65]: training loss = 265265.794260, training mAP = 0.168578, validation mAP = 0.152734
+2024-11-25 23:16:38.166 | INFO     | model:train:212 - [epoch 66]: training loss = 275416.350943, training mAP = 0.155869, validation mAP = 0.151562
+2024-11-25 23:18:57.674 | INFO     | model:train:212 - [epoch 67]: training loss = 263192.484234, training mAP = 0.169729, validation mAP = 0.155733
+2024-11-25 23:18:57.756 | INFO     | model:train:220 - New best validation mAP: 0.1557
+2024-11-25 23:21:23.549 | INFO     | model:train:212 - [epoch 68]: training loss = 260508.276225, training mAP = 0.174437, validation mAP = 0.161206
+2024-11-25 23:21:26.735 | INFO     | model:train:220 - New best validation mAP: 0.1612
+2024-11-25 23:23:45.849 | INFO     | model:train:212 - [epoch 69]: training loss = 263579.985678, training mAP = 0.174483, validation mAP = 0.159542
+2024-11-25 23:26:04.237 | INFO     | model:train:212 - [epoch 70]: training loss = 273038.606717, training mAP = 0.168364, validation mAP = 0.163702
+2024-11-25 23:26:07.077 | INFO     | model:train:220 - New best validation mAP: 0.1637
+2024-11-25 23:28:17.630 | INFO     | model:train:212 - [epoch 71]: training loss = 263081.936436, training mAP = 0.178172, validation mAP = 0.158942
+2024-11-25 23:30:23.959 | INFO     | model:train:212 - [epoch 72]: training loss = 271127.913371, training mAP = 0.165755, validation mAP = 0.153407
+2024-11-25 23:32:37.818 | INFO     | model:train:212 - [epoch 73]: training loss = 269856.015957, training mAP = 0.167376, validation mAP = 0.158614
+2024-11-25 23:34:48.254 | INFO     | model:train:212 - [epoch 74]: training loss = 260885.447372, training mAP = 0.176143, validation mAP = 0.165396
+2024-11-25 23:34:48.372 | INFO     | model:train:220 - New best validation mAP: 0.1654
+2024-11-25 23:36:57.621 | INFO     | model:train:212 - [epoch 75]: training loss = 266172.860710, training mAP = 0.172685, validation mAP = 0.151810
+2024-11-25 23:39:05.853 | INFO     | model:train:212 - [epoch 76]: training loss = 272861.555742, training mAP = 0.165871, validation mAP = 0.161626
+2024-11-25 23:41:14.587 | INFO     | model:train:212 - [epoch 77]: training loss = 260664.474380, training mAP = 0.182199, validation mAP = 0.155705
+2024-11-25 23:43:24.265 | INFO     | model:train:212 - [epoch 78]: training loss = 266170.258523, training mAP = 0.177347, validation mAP = 0.167126
+2024-11-25 23:43:24.336 | INFO     | model:train:220 - New best validation mAP: 0.1671
+2024-11-25 23:45:37.171 | INFO     | model:train:212 - [epoch 79]: training loss = 263264.630239, training mAP = 0.180707, validation mAP = 0.168037
+2024-11-25 23:45:39.870 | INFO     | model:train:220 - New best validation mAP: 0.1680
+2024-11-25 23:47:57.662 | INFO     | model:train:212 - [epoch 80]: training loss = 259953.096028, training mAP = 0.185285, validation mAP = 0.166032
+2024-11-25 23:50:20.285 | INFO     | model:train:212 - [epoch 81]: training loss = 265850.227161, training mAP = 0.175126, validation mAP = 0.169668
+2024-11-25 23:50:23.473 | INFO     | model:train:220 - New best validation mAP: 0.1697
+2024-11-25 23:52:51.936 | INFO     | model:train:212 - [epoch 82]: training loss = 267250.194855, training mAP = 0.175385, validation mAP = 0.156474
+2024-11-25 23:55:16.541 | INFO     | model:train:212 - [epoch 83]: training loss = 261269.931950, training mAP = 0.187075, validation mAP = 0.172888
+2024-11-25 23:55:20.755 | INFO     | model:train:220 - New best validation mAP: 0.1729
+2024-11-25 23:57:35.876 | INFO     | model:train:212 - [epoch 84]: training loss = 259045.577540, training mAP = 0.190705, validation mAP = 0.170292
+2024-11-25 23:59:42.804 | INFO     | model:train:212 - [epoch 85]: training loss = 262147.262074, training mAP = 0.185374, validation mAP = 0.162181
+2024-11-26 00:01:54.039 | INFO     | model:train:212 - [epoch 86]: training loss = 254206.036260, training mAP = 0.194871, validation mAP = 0.169861
+2024-11-26 00:04:07.554 | INFO     | model:train:212 - [epoch 87]: training loss = 257714.922719, training mAP = 0.194415, validation mAP = 0.169609
+2024-11-26 00:06:18.716 | INFO     | model:train:212 - [epoch 88]: training loss = 276672.680402, training mAP = 0.171468, validation mAP = 0.158463
+2024-11-26 00:08:27.658 | INFO     | model:train:212 - [epoch 89]: training loss = 261299.440049, training mAP = 0.191022, validation mAP = 0.176482
+2024-11-26 00:08:27.732 | INFO     | model:train:220 - New best validation mAP: 0.1765
+2024-11-26 00:10:38.245 | INFO     | model:train:212 - [epoch 90]: training loss = 257006.741234, training mAP = 0.197120, validation mAP = 0.175517
+2024-11-26 00:12:46.210 | INFO     | model:train:212 - [epoch 91]: training loss = 261359.458135, training mAP = 0.192603, validation mAP = 0.174403
+2024-11-26 00:14:57.302 | INFO     | model:train:212 - [epoch 92]: training loss = 253641.469917, training mAP = 0.195793, validation mAP = 0.176048
+2024-11-26 00:17:14.786 | INFO     | model:train:212 - [epoch 93]: training loss = 251278.329798, training mAP = 0.201589, validation mAP = 0.173093
+2024-11-26 00:19:35.497 | INFO     | model:train:212 - [epoch 94]: training loss = 256425.711691, training mAP = 0.199672, validation mAP = 0.181767
+2024-11-26 00:19:38.558 | INFO     | model:train:220 - New best validation mAP: 0.1818
+2024-11-26 00:22:03.045 | INFO     | model:train:212 - [epoch 95]: training loss = 254997.865065, training mAP = 0.202770, validation mAP = 0.176326
+2024-11-26 00:24:21.196 | INFO     | model:train:212 - [epoch 96]: training loss = 250436.672600, training mAP = 0.205918, validation mAP = 0.176918
+2024-11-26 00:26:38.339 | INFO     | model:train:212 - [epoch 97]: training loss = 251812.133137, training mAP = 0.207750, validation mAP = 0.176814
+2024-11-26 00:28:51.983 | INFO     | model:train:212 - [epoch 98]: training loss = 251280.764551, training mAP = 0.210381, validation mAP = 0.183202
+2024-11-26 00:28:52.074 | INFO     | model:train:220 - New best validation mAP: 0.1832
+2024-11-26 00:30:58.483 | INFO     | model:train:212 - [epoch 99]: training loss = 248122.030912, training mAP = 0.214806, validation mAP = 0.184818
+2024-11-26 00:31:01.146 | INFO     | model:train:220 - New best validation mAP: 0.1848
+2024-11-26 00:33:09.177 | INFO     | model:train:212 - [epoch 100]: training loss = 258613.807664, training mAP = 0.200886, validation mAP = 0.176413
+2024-11-26 00:35:25.352 | INFO     | model:train:212 - [epoch 101]: training loss = 256797.556199, training mAP = 0.194702, validation mAP = 0.185596
+2024-11-26 00:35:29.300 | INFO     | model:train:220 - New best validation mAP: 0.1856
+2024-11-26 00:37:39.184 | INFO     | model:train:212 - [epoch 102]: training loss = 247810.648037, training mAP = 0.211673, validation mAP = 0.178176
+2024-11-26 00:39:47.408 | INFO     | model:train:212 - [epoch 103]: training loss = 251657.734981, training mAP = 0.211578, validation mAP = 0.190769
+2024-11-26 00:39:47.486 | INFO     | model:train:220 - New best validation mAP: 0.1908
+2024-11-26 00:41:59.731 | INFO     | model:train:212 - [epoch 104]: training loss = 246500.423206, training mAP = 0.215776, validation mAP = 0.186083
+2024-11-26 00:44:12.462 | INFO     | model:train:212 - [epoch 105]: training loss = 252420.693158, training mAP = 0.211285, validation mAP = 0.182734
+2024-11-26 00:46:29.194 | INFO     | model:train:212 - [epoch 106]: training loss = 257026.643791, training mAP = 0.203678, validation mAP = 0.183133
+2024-11-26 00:48:58.202 | INFO     | model:train:212 - [epoch 107]: training loss = 252835.455080, training mAP = 0.218074, validation mAP = 0.186357
+2024-11-26 00:51:20.611 | INFO     | model:train:212 - [epoch 108]: training loss = 247094.811461, training mAP = 0.216431, validation mAP = 0.186675
+2024-11-26 00:53:37.263 | INFO     | model:train:212 - [epoch 109]: training loss = 249194.011588, training mAP = 0.227756, validation mAP = 0.177776
+2024-11-26 00:55:49.444 | INFO     | model:train:212 - [epoch 110]: training loss = 254616.453732, training mAP = 0.205734, validation mAP = 0.179980
+2024-11-26 00:57:55.820 | INFO     | model:train:212 - [epoch 111]: training loss = 249373.083317, training mAP = 0.223109, validation mAP = 0.186172
+2024-11-26 01:00:02.262 | INFO     | model:train:212 - [epoch 112]: training loss = 253499.400737, training mAP = 0.221486, validation mAP = 0.166023
+2024-11-26 01:02:10.006 | INFO     | model:train:212 - [epoch 113]: training loss = 251582.390752, training mAP = 0.224085, validation mAP = 0.191700
+2024-11-26 01:02:12.616 | INFO     | model:train:220 - New best validation mAP: 0.1917
+2024-11-26 01:04:23.028 | INFO     | model:train:212 - [epoch 114]: training loss = 257253.970441, training mAP = 0.215618, validation mAP = 0.187462
+2024-11-26 01:06:29.971 | INFO     | model:train:212 - [epoch 115]: training loss = 250106.679432, training mAP = 0.218010, validation mAP = 0.178651
+2024-11-26 01:08:37.849 | INFO     | model:train:212 - [epoch 116]: training loss = 244706.232938, training mAP = 0.234267, validation mAP = 0.196529
+2024-11-26 01:08:41.459 | INFO     | model:train:220 - New best validation mAP: 0.1965
+2024-11-26 01:10:49.325 | INFO     | model:train:212 - [epoch 117]: training loss = 244042.929508, training mAP = 0.235373, validation mAP = 0.186415
+2024-11-26 01:13:00.675 | INFO     | model:train:212 - [epoch 118]: training loss = 255865.182100, training mAP = 0.215039, validation mAP = 0.186579
+2024-11-26 01:15:21.893 | INFO     | model:train:212 - [epoch 119]: training loss = 248546.908829, training mAP = 0.229587, validation mAP = 0.181057
+2024-11-26 01:17:40.338 | INFO     | model:train:212 - [epoch 120]: training loss = 245342.320721, training mAP = 0.237718, validation mAP = 0.199120
+2024-11-26 01:17:40.437 | INFO     | model:train:220 - New best validation mAP: 0.1991
+2024-11-26 01:19:59.510 | INFO     | model:train:212 - [epoch 121]: training loss = 243830.942247, training mAP = 0.243106, validation mAP = 0.190837
+2024-11-26 01:22:15.290 | INFO     | model:train:212 - [epoch 122]: training loss = 254785.280409, training mAP = 0.222402, validation mAP = 0.193361
+2024-11-26 01:24:26.760 | INFO     | model:train:212 - [epoch 123]: training loss = 259078.843223, training mAP = 0.207407, validation mAP = 0.177198
+2024-11-26 01:26:32.629 | INFO     | model:train:212 - [epoch 124]: training loss = 242847.883907, training mAP = 0.233882, validation mAP = 0.191787
+2024-11-26 01:28:36.551 | INFO     | model:train:212 - [epoch 125]: training loss = 245270.734754, training mAP = 0.241999, validation mAP = 0.183065
+2024-11-26 01:30:45.130 | INFO     | model:train:212 - [epoch 126]: training loss = 242480.093813, training mAP = 0.243469, validation mAP = 0.195957
+2024-11-26 01:32:56.920 | INFO     | model:train:212 - [epoch 127]: training loss = 240366.087843, training mAP = 0.245295, validation mAP = 0.193463
+2024-11-26 01:35:00.112 | INFO     | model:train:212 - [epoch 128]: training loss = 242523.116510, training mAP = 0.245578, validation mAP = 0.191599
+2024-11-26 01:37:05.724 | INFO     | model:train:212 - [epoch 129]: training loss = 248288.276798, training mAP = 0.239222, validation mAP = 0.188704
+2024-11-26 01:39:11.001 | INFO     | model:train:212 - [epoch 130]: training loss = 245901.722425, training mAP = 0.248874, validation mAP = 0.194300
+2024-11-26 01:41:18.059 | INFO     | model:train:212 - [epoch 131]: training loss = 241466.621940, training mAP = 0.244954, validation mAP = 0.200810
+2024-11-26 01:41:20.697 | INFO     | model:train:220 - New best validation mAP: 0.2008
+2024-11-26 01:43:34.163 | INFO     | model:train:212 - [epoch 132]: training loss = 239232.241535, training mAP = 0.252997, validation mAP = 0.197179
+2024-11-26 01:45:50.031 | INFO     | model:train:212 - [epoch 133]: training loss = 245764.134904, training mAP = 0.242296, validation mAP = 0.198910
+2024-11-26 01:48:12.226 | INFO     | model:train:212 - [epoch 134]: training loss = 240269.914906, training mAP = 0.246908, validation mAP = 0.195854
+2024-11-26 01:50:26.862 | INFO     | model:train:212 - [epoch 135]: training loss = 234727.654290, training mAP = 0.262214, validation mAP = 0.196901
+2024-11-26 01:52:42.035 | INFO     | model:train:212 - [epoch 136]: training loss = 239166.564320, training mAP = 0.256581, validation mAP = 0.196633
+2024-11-26 01:54:45.166 | INFO     | model:train:212 - [epoch 137]: training loss = 248344.187149, training mAP = 0.248336, validation mAP = 0.192281
+2024-11-26 01:56:51.137 | INFO     | model:train:212 - [epoch 138]: training loss = 238938.292840, training mAP = 0.254964, validation mAP = 0.194791
+2024-11-26 01:59:00.698 | INFO     | model:train:212 - [epoch 139]: training loss = 235312.063417, training mAP = 0.265042, validation mAP = 0.202098
+2024-11-26 01:59:00.829 | INFO     | model:train:220 - New best validation mAP: 0.2021
+2024-11-26 02:01:11.776 | INFO     | model:train:212 - [epoch 140]: training loss = 238531.208424, training mAP = 0.257333, validation mAP = 0.196104
+2024-11-26 02:03:15.110 | INFO     | model:train:212 - [epoch 141]: training loss = 254018.400271, training mAP = 0.240455, validation mAP = 0.186563
+2024-11-26 02:05:18.502 | INFO     | model:train:212 - [epoch 142]: training loss = 240269.601774, training mAP = 0.259175, validation mAP = 0.202063
+2024-11-26 02:07:23.025 | INFO     | model:train:212 - [epoch 143]: training loss = 244100.976425, training mAP = 0.255713, validation mAP = 0.200385
+2024-11-26 02:09:28.444 | INFO     | model:train:212 - [epoch 144]: training loss = 237074.675246, training mAP = 0.267646, validation mAP = 0.191639
+2024-11-26 02:11:41.056 | INFO     | model:train:212 - [epoch 145]: training loss = 234332.664849, training mAP = 0.275349, validation mAP = 0.189572
+2024-11-26 02:13:52.901 | INFO     | model:train:212 - [epoch 146]: training loss = 239397.178516, training mAP = 0.259045, validation mAP = 0.197493
+2024-11-26 02:16:12.050 | INFO     | model:train:212 - [epoch 147]: training loss = 233151.268336, training mAP = 0.274084, validation mAP = 0.201598
+2024-11-26 02:18:25.754 | INFO     | model:train:212 - [epoch 148]: training loss = 230307.464929, training mAP = 0.279873, validation mAP = 0.198951
+2024-11-26 02:20:40.843 | INFO     | model:train:212 - [epoch 149]: training loss = 236839.312109, training mAP = 0.271818, validation mAP = 0.192770
+2024-11-26 02:22:45.979 | INFO     | model:train:212 - [epoch 150]: training loss = 234511.331068, training mAP = 0.274658, validation mAP = 0.205358
+2024-11-26 02:22:48.460 | INFO     | model:train:220 - New best validation mAP: 0.2054
+2024-11-26 02:24:54.387 | INFO     | model:train:212 - [epoch 151]: training loss = 234608.081703, training mAP = 0.278153, validation mAP = 0.194206
+2024-11-26 02:27:00.753 | INFO     | model:train:212 - [epoch 152]: training loss = 235583.019329, training mAP = 0.272428, validation mAP = 0.205244
+2024-11-26 02:29:12.040 | INFO     | model:train:212 - [epoch 153]: training loss = 236507.186451, training mAP = 0.276050, validation mAP = 0.197953
+2024-11-26 02:31:22.058 | INFO     | model:train:212 - [epoch 154]: training loss = 232696.847678, training mAP = 0.282679, validation mAP = 0.192620
+2024-11-26 02:33:32.279 | INFO     | model:train:212 - [epoch 155]: training loss = 230368.651826, training mAP = 0.284550, validation mAP = 0.205672
+2024-11-26 02:33:32.355 | INFO     | model:train:220 - New best validation mAP: 0.2057
+2024-11-26 02:35:46.035 | INFO     | model:train:212 - [epoch 156]: training loss = 228281.086995, training mAP = 0.288145, validation mAP = 0.205987
+2024-11-26 02:35:48.503 | INFO     | model:train:220 - New best validation mAP: 0.2060
+2024-11-26 02:37:53.824 | INFO     | model:train:212 - [epoch 157]: training loss = 236466.326470, training mAP = 0.272511, validation mAP = 0.195450
+2024-11-26 02:40:06.958 | INFO     | model:train:212 - [epoch 158]: training loss = 234249.077302, training mAP = 0.273385, validation mAP = 0.193864
+2024-11-26 02:42:25.516 | INFO     | model:train:212 - [epoch 159]: training loss = 230551.027912, training mAP = 0.289177, validation mAP = 0.201915
+2024-11-26 02:44:46.972 | INFO     | model:train:212 - [epoch 160]: training loss = 228119.423635, training mAP = 0.292492, validation mAP = 0.193703
+2024-11-26 02:47:02.736 | INFO     | model:train:212 - [epoch 161]: training loss = 242750.776330, training mAP = 0.244434, validation mAP = 0.180879
+2024-11-26 02:49:17.171 | INFO     | model:train:212 - [epoch 162]: training loss = 232470.232197, training mAP = 0.270232, validation mAP = 0.197648
+2024-11-26 02:51:26.432 | INFO     | model:train:212 - [epoch 163]: training loss = 243745.187230, training mAP = 0.261666, validation mAP = 0.196143
+2024-11-26 02:53:31.960 | INFO     | model:train:212 - [epoch 164]: training loss = 236184.197996, training mAP = 0.266605, validation mAP = 0.202610
+2024-11-26 02:55:36.553 | INFO     | model:train:212 - [epoch 165]: training loss = 229132.716867, training mAP = 0.296313, validation mAP = 0.205712
+2024-11-26 02:57:40.671 | INFO     | model:train:212 - [epoch 166]: training loss = 224148.261729, training mAP = 0.304642, validation mAP = 0.206273
+2024-11-26 02:57:40.741 | INFO     | model:train:220 - New best validation mAP: 0.2063
+2024-11-26 02:59:45.525 | INFO     | model:train:212 - [epoch 167]: training loss = 227012.176221, training mAP = 0.299671, validation mAP = 0.203353
+2024-11-26 03:01:52.186 | INFO     | model:train:212 - [epoch 168]: training loss = 223472.449323, training mAP = 0.307872, validation mAP = 0.207319
+2024-11-26 03:01:52.256 | INFO     | model:train:220 - New best validation mAP: 0.2073
+2024-11-26 03:03:56.858 | INFO     | model:train:212 - [epoch 169]: training loss = 231684.384144, training mAP = 0.290865, validation mAP = 0.208215
+2024-11-26 03:03:59.290 | INFO     | model:train:220 - New best validation mAP: 0.2082
+2024-11-26 03:06:05.398 | INFO     | model:train:212 - [epoch 170]: training loss = 224215.244113, training mAP = 0.303472, validation mAP = 0.204738
+2024-11-26 03:08:16.569 | INFO     | model:train:212 - [epoch 171]: training loss = 227112.558099, training mAP = 0.307227, validation mAP = 0.204839
+2024-11-26 03:10:31.710 | INFO     | model:train:212 - [epoch 172]: training loss = 224735.523345, training mAP = 0.308901, validation mAP = 0.207987
+2024-11-26 03:12:48.352 | INFO     | model:train:212 - [epoch 173]: training loss = 225642.928738, training mAP = 0.303369, validation mAP = 0.194374
+2024-11-26 03:15:00.303 | INFO     | model:train:212 - [epoch 174]: training loss = 231625.761228, training mAP = 0.298160, validation mAP = 0.209924
+2024-11-26 03:15:00.385 | INFO     | model:train:220 - New best validation mAP: 0.2099
+2024-11-26 03:17:12.322 | INFO     | model:train:212 - [epoch 175]: training loss = 224103.092278, training mAP = 0.308463, validation mAP = 0.201055
+2024-11-26 03:19:16.883 | INFO     | model:train:212 - [epoch 176]: training loss = 220911.386050, training mAP = 0.316151, validation mAP = 0.205902
+2024-11-26 03:21:18.555 | INFO     | model:train:212 - [epoch 177]: training loss = 234894.453420, training mAP = 0.291355, validation mAP = 0.207893
+2024-11-26 03:23:26.330 | INFO     | model:train:212 - [epoch 178]: training loss = 228268.613340, training mAP = 0.302337, validation mAP = 0.204261
+2024-11-26 03:25:39.580 | INFO     | model:train:212 - [epoch 179]: training loss = 226798.152584, training mAP = 0.304193, validation mAP = 0.198513
+2024-11-26 03:27:49.388 | INFO     | model:train:212 - [epoch 180]: training loss = 226994.754606, training mAP = 0.308014, validation mAP = 0.194798
+2024-11-26 03:30:01.111 | INFO     | model:train:212 - [epoch 181]: training loss = 219128.580947, training mAP = 0.321875, validation mAP = 0.204054
+2024-11-26 03:32:09.137 | INFO     | model:train:212 - [epoch 182]: training loss = 222992.521318, training mAP = 0.314747, validation mAP = 0.192817
+2024-11-26 03:34:16.846 | INFO     | model:train:212 - [epoch 183]: training loss = 221179.556040, training mAP = 0.323963, validation mAP = 0.200796
+2024-11-26 03:36:27.954 | INFO     | model:train:212 - [epoch 184]: training loss = 223591.226853, training mAP = 0.318604, validation mAP = 0.199718
+2024-11-26 03:38:35.861 | INFO     | model:train:212 - [epoch 185]: training loss = 222467.518277, training mAP = 0.322585, validation mAP = 0.202942
+2024-11-26 03:40:46.013 | INFO     | model:train:212 - [epoch 186]: training loss = 224450.725778, training mAP = 0.317236, validation mAP = 0.202888
+2024-11-26 03:42:56.177 | INFO     | model:train:212 - [epoch 187]: training loss = 227506.241352, training mAP = 0.311919, validation mAP = 0.207588
+2024-11-26 03:45:09.450 | INFO     | model:train:212 - [epoch 188]: training loss = 216227.059038, training mAP = 0.339323, validation mAP = 0.200195
+2024-11-26 03:47:25.598 | INFO     | model:train:212 - [epoch 189]: training loss = 217400.839516, training mAP = 0.334121, validation mAP = 0.207145
+2024-11-26 03:49:36.671 | INFO     | model:train:212 - [epoch 190]: training loss = 218863.056956, training mAP = 0.333461, validation mAP = 0.200688
+2024-11-26 03:51:48.936 | INFO     | model:train:212 - [epoch 191]: training loss = 215822.172319, training mAP = 0.343493, validation mAP = 0.201504
+2024-11-26 03:53:59.032 | INFO     | model:train:212 - [epoch 192]: training loss = 213061.493893, training mAP = 0.351906, validation mAP = 0.208804
+2024-11-26 03:56:11.412 | INFO     | model:train:212 - [epoch 193]: training loss = 214280.016916, training mAP = 0.359551, validation mAP = 0.200205
+2024-11-26 03:58:24.385 | INFO     | model:train:212 - [epoch 194]: training loss = 214138.575359, training mAP = 0.355129, validation mAP = 0.204185
+2024-11-26 04:00:36.265 | INFO     | model:train:212 - [epoch 195]: training loss = 223465.531723, training mAP = 0.331659, validation mAP = 0.201049
+2024-11-26 04:02:46.580 | INFO     | model:train:212 - [epoch 196]: training loss = 213120.943110, training mAP = 0.350958, validation mAP = 0.211223
+2024-11-26 04:02:46.657 | INFO     | model:train:220 - New best validation mAP: 0.2112
+2024-11-26 04:04:58.046 | INFO     | model:train:212 - [epoch 197]: training loss = 215171.406732, training mAP = 0.357137, validation mAP = 0.207957
+2024-11-26 04:07:11.306 | INFO     | model:train:212 - [epoch 198]: training loss = 227606.504362, training mAP = 0.314632, validation mAP = 0.189807
+2024-11-26 04:09:15.524 | INFO     | model:train:212 - [epoch 199]: training loss = 225192.752682, training mAP = 0.304830, validation mAP = 0.193857
+2024-11-26 04:11:19.312 | INFO     | model:train:212 - [epoch 200]: training loss = 215336.744467, training mAP = 0.351087, validation mAP = 0.204019
+2024-11-26 04:13:25.981 | INFO     | model:train:212 - [epoch 201]: training loss = 212719.942352, training mAP = 0.357021, validation mAP = 0.198767
+2024-11-26 04:15:31.197 | INFO     | model:train:212 - [epoch 202]: training loss = 211247.924426, training mAP = 0.366888, validation mAP = 0.203567
+2024-11-26 04:17:37.410 | INFO     | model:train:212 - [epoch 203]: training loss = 217417.290829, training mAP = 0.350373, validation mAP = 0.202572
+2024-11-26 04:19:42.777 | INFO     | model:train:212 - [epoch 204]: training loss = 215848.844231, training mAP = 0.358934, validation mAP = 0.183388
+2024-11-26 04:21:49.167 | INFO     | model:train:212 - [epoch 205]: training loss = 218448.686279, training mAP = 0.352486, validation mAP = 0.208609
+2024-11-26 04:23:56.661 | INFO     | model:train:212 - [epoch 206]: training loss = 215099.533105, training mAP = 0.371198, validation mAP = 0.208908
+2024-11-26 04:26:00.505 | INFO     | model:train:212 - [epoch 207]: training loss = 212233.566614, training mAP = 0.372231, validation mAP = 0.209015
+2024-11-26 04:28:04.334 | INFO     | model:train:212 - [epoch 208]: training loss = 211319.628921, training mAP = 0.370837, validation mAP = 0.197201
+2024-11-26 04:30:09.514 | INFO     | model:train:212 - [epoch 209]: training loss = 208201.225452, training mAP = 0.389731, validation mAP = 0.205068
+2024-11-26 04:32:14.951 | INFO     | model:train:212 - [epoch 210]: training loss = 212724.607406, training mAP = 0.367131, validation mAP = 0.204673
+2024-11-26 04:34:19.651 | INFO     | model:train:212 - [epoch 211]: training loss = 212208.937531, training mAP = 0.380446, validation mAP = 0.195946
+2024-11-26 04:36:23.347 | INFO     | model:train:212 - [epoch 212]: training loss = 208228.589515, training mAP = 0.384389, validation mAP = 0.202123
+2024-11-26 04:38:27.739 | INFO     | model:train:212 - [epoch 213]: training loss = 213985.635203, training mAP = 0.371290, validation mAP = 0.200449
+2024-11-26 04:40:32.921 | INFO     | model:train:212 - [epoch 214]: training loss = 210545.909466, training mAP = 0.381212, validation mAP = 0.186904
+2024-11-26 04:42:36.481 | INFO     | model:train:212 - [epoch 215]: training loss = 204404.366975, training mAP = 0.401177, validation mAP = 0.199562
+2024-11-26 04:44:44.706 | INFO     | model:train:212 - [epoch 216]: training loss = 202711.463339, training mAP = 0.411997, validation mAP = 0.195456
+2024-11-26 04:46:48.499 | INFO     | model:train:212 - [epoch 217]: training loss = 201528.428149, training mAP = 0.417546, validation mAP = 0.192359
+2024-11-26 04:48:53.272 | INFO     | model:train:212 - [epoch 218]: training loss = 203986.712827, training mAP = 0.405910, validation mAP = 0.202730
+2024-11-26 04:50:58.132 | INFO     | model:train:212 - [epoch 219]: training loss = 202004.768382, training mAP = 0.420073, validation mAP = 0.170031
+2024-11-26 04:53:04.206 | INFO     | model:train:212 - [epoch 220]: training loss = 211978.848391, training mAP = 0.395224, validation mAP = 0.199875
+2024-11-26 04:55:10.162 | INFO     | model:train:212 - [epoch 221]: training loss = 205332.410887, training mAP = 0.412164, validation mAP = 0.205048
+2024-11-26 04:57:15.629 | INFO     | model:train:212 - [epoch 222]: training loss = 199091.827007, training mAP = 0.419898, validation mAP = 0.204380
+2024-11-26 04:59:17.403 | INFO     | model:train:212 - [epoch 223]: training loss = 197077.554576, training mAP = 0.443444, validation mAP = 0.202098
+2024-11-26 05:01:20.701 | INFO     | model:train:212 - [epoch 224]: training loss = 197150.216467, training mAP = 0.437221, validation mAP = 0.197659
+2024-11-26 05:03:27.043 | INFO     | model:train:212 - [epoch 225]: training loss = 195958.845582, training mAP = 0.449304, validation mAP = 0.191592
+2024-11-26 05:05:37.787 | INFO     | model:train:212 - [epoch 226]: training loss = 200447.840080, training mAP = 0.427291, validation mAP = 0.185691
+2024-11-26 05:07:44.284 | INFO     | model:train:212 - [epoch 227]: training loss = 219474.120674, training mAP = 0.356277, validation mAP = 0.204576
+2024-11-26 05:09:49.354 | INFO     | model:train:212 - [epoch 228]: training loss = 209172.365759, training mAP = 0.407111, validation mAP = 0.195726
+2024-11-26 05:11:53.839 | INFO     | model:train:212 - [epoch 229]: training loss = 205087.419113, training mAP = 0.421816, validation mAP = 0.185024
+2024-11-26 05:13:59.186 | INFO     | model:train:212 - [epoch 230]: training loss = 208193.762248, training mAP = 0.401584, validation mAP = 0.186561
+2024-11-26 05:16:03.423 | INFO     | model:train:212 - [epoch 231]: training loss = 203631.952689, training mAP = 0.423592, validation mAP = 0.212912
+2024-11-26 05:16:03.494 | INFO     | model:train:220 - New best validation mAP: 0.2129
+2024-11-26 05:18:08.444 | INFO     | model:train:212 - [epoch 232]: training loss = 195004.803908, training mAP = 0.453200, validation mAP = 0.199304
+2024-11-26 05:20:13.723 | INFO     | model:train:212 - [epoch 233]: training loss = 194171.325839, training mAP = 0.458618, validation mAP = 0.207068
+2024-11-26 05:22:18.403 | INFO     | model:train:212 - [epoch 234]: training loss = 199919.239758, training mAP = 0.455852, validation mAP = 0.207617
+2024-11-26 05:24:23.388 | INFO     | model:train:212 - [epoch 235]: training loss = 203015.585086, training mAP = 0.447433, validation mAP = 0.190529
+2024-11-26 05:26:27.280 | INFO     | model:train:212 - [epoch 236]: training loss = 206734.679864, training mAP = 0.420807, validation mAP = 0.204325
+2024-11-26 05:28:31.536 | INFO     | model:train:212 - [epoch 237]: training loss = 196270.163250, training mAP = 0.457670, validation mAP = 0.205878
+2024-11-26 05:30:37.366 | INFO     | model:train:212 - [epoch 238]: training loss = 197400.081484, training mAP = 0.454986, validation mAP = 0.187570
+2024-11-26 05:32:42.721 | INFO     | model:train:212 - [epoch 239]: training loss = 203535.662243, training mAP = 0.429081, validation mAP = 0.191828
+2024-11-26 05:34:50.746 | INFO     | model:train:212 - [epoch 240]: training loss = 195764.103332, training mAP = 0.454819, validation mAP = 0.194007
+2024-11-26 05:36:55.229 | INFO     | model:train:212 - [epoch 241]: training loss = 195113.260311, training mAP = 0.465532, validation mAP = 0.196978
+2024-11-26 05:38:57.944 | INFO     | model:train:212 - [epoch 242]: training loss = 190122.461874, training mAP = 0.486316, validation mAP = 0.200106
+2024-11-26 05:41:03.274 | INFO     | model:train:212 - [epoch 243]: training loss = 196387.440668, training mAP = 0.459962, validation mAP = 0.207541
+2024-11-26 05:43:09.349 | INFO     | model:train:212 - [epoch 244]: training loss = 191127.403959, training mAP = 0.485077, validation mAP = 0.197693
+2024-11-26 05:45:15.726 | INFO     | model:train:212 - [epoch 245]: training loss = 194136.823591, training mAP = 0.482816, validation mAP = 0.200595
+2024-11-26 05:47:21.939 | INFO     | model:train:212 - [epoch 246]: training loss = 208353.258137, training mAP = 0.435639, validation mAP = 0.195304
+2024-11-26 05:49:28.138 | INFO     | model:train:212 - [epoch 247]: training loss = 193661.173810, training mAP = 0.473832, validation mAP = 0.208814
+2024-11-26 05:51:31.698 | INFO     | model:train:212 - [epoch 248]: training loss = 188631.348505, training mAP = 0.504174, validation mAP = 0.201553
+2024-11-26 05:53:34.417 | INFO     | model:train:212 - [epoch 249]: training loss = 193243.668078, training mAP = 0.484590, validation mAP = 0.189467
+2024-11-26 05:55:38.973 | INFO     | model:train:212 - [epoch 250]: training loss = 196834.959858, training mAP = 0.467177, validation mAP = 0.187968
+2024-11-26 05:57:45.339 | INFO     | model:train:212 - [epoch 251]: training loss = 191468.664443, training mAP = 0.489148, validation mAP = 0.204569
+2024-11-26 05:59:54.794 | INFO     | model:train:212 - [epoch 252]: training loss = 187989.239895, training mAP = 0.504300, validation mAP = 0.201997
+2024-11-26 06:01:59.953 | INFO     | model:train:212 - [epoch 253]: training loss = 189538.762558, training mAP = 0.504258, validation mAP = 0.209358
+2024-11-26 06:04:08.005 | INFO     | model:train:212 - [epoch 254]: training loss = 191420.157522, training mAP = 0.490297, validation mAP = 0.206767
+2024-11-26 06:06:14.800 | INFO     | model:train:212 - [epoch 255]: training loss = 189553.554306, training mAP = 0.513272, validation mAP = 0.187973
+2024-11-26 06:08:21.485 | INFO     | model:train:212 - [epoch 256]: training loss = 191774.561057, training mAP = 0.497089, validation mAP = 0.174915
+2024-11-26 06:10:28.927 | INFO     | model:train:212 - [epoch 257]: training loss = 192881.302434, training mAP = 0.479794, validation mAP = 0.201162
+2024-11-26 06:12:37.484 | INFO     | model:train:212 - [epoch 258]: training loss = 190085.361344, training mAP = 0.517247, validation mAP = 0.194523
+2024-11-26 06:14:42.640 | INFO     | model:train:212 - [epoch 259]: training loss = 184311.106306, training mAP = 0.528007, validation mAP = 0.194792
+2024-11-26 06:16:49.076 | INFO     | model:train:212 - [epoch 260]: training loss = 189002.119805, training mAP = 0.522854, validation mAP = 0.208596
+2024-11-26 06:18:52.419 | INFO     | model:train:212 - [epoch 261]: training loss = 185652.226933, training mAP = 0.527643, validation mAP = 0.201432
+2024-11-26 06:20:55.929 | INFO     | model:train:212 - [epoch 262]: training loss = 185581.225457, training mAP = 0.537510, validation mAP = 0.213198
+2024-11-26 06:20:55.999 | INFO     | model:train:220 - New best validation mAP: 0.2132
+2024-11-26 06:23:01.390 | INFO     | model:train:212 - [epoch 263]: training loss = 189458.504501, training mAP = 0.525046, validation mAP = 0.200316
+2024-11-26 06:25:09.358 | INFO     | model:train:212 - [epoch 264]: training loss = 183415.900832, training mAP = 0.540550, validation mAP = 0.206182
+2024-11-26 06:27:14.279 | INFO     | model:train:212 - [epoch 265]: training loss = 181608.951796, training mAP = 0.560444, validation mAP = 0.198574
+2024-11-26 06:29:18.666 | INFO     | model:train:212 - [epoch 266]: training loss = 179392.868722, training mAP = 0.564955, validation mAP = 0.205186
+2024-11-26 06:31:22.175 | INFO     | model:train:212 - [epoch 267]: training loss = 181373.090942, training mAP = 0.558655, validation mAP = 0.196457
+2024-11-26 06:33:25.748 | INFO     | model:train:212 - [epoch 268]: training loss = 195670.460583, training mAP = 0.476020, validation mAP = 0.189823
+2024-11-26 06:35:32.726 | INFO     | model:train:212 - [epoch 269]: training loss = 196034.960924, training mAP = 0.481158, validation mAP = 0.197248
+2024-11-26 06:37:39.107 | INFO     | model:train:212 - [epoch 270]: training loss = 182840.572531, training mAP = 0.539635, validation mAP = 0.202867
+2024-11-26 06:39:45.330 | INFO     | model:train:212 - [epoch 271]: training loss = 183180.199770, training mAP = 0.566124, validation mAP = 0.205559
+2024-11-26 06:41:50.954 | INFO     | model:train:212 - [epoch 272]: training loss = 188355.242556, training mAP = 0.519845, validation mAP = 0.205153
+2024-11-26 06:43:56.794 | INFO     | model:train:212 - [epoch 273]: training loss = 190707.217586, training mAP = 0.514258, validation mAP = 0.204532
+2024-11-26 06:46:02.100 | INFO     | model:train:212 - [epoch 274]: training loss = 190400.070143, training mAP = 0.521935, validation mAP = 0.198307
+2024-11-26 06:48:08.396 | INFO     | model:train:212 - [epoch 275]: training loss = 184631.486800, training mAP = 0.545117, validation mAP = 0.192814
+2024-11-26 06:50:15.252 | INFO     | model:train:212 - [epoch 276]: training loss = 193848.000139, training mAP = 0.521168, validation mAP = 0.186654
+2024-11-26 06:52:21.038 | INFO     | model:train:212 - [epoch 277]: training loss = 192288.681235, training mAP = 0.490774, validation mAP = 0.208218
+2024-11-26 06:54:27.496 | INFO     | model:train:212 - [epoch 278]: training loss = 180508.604661, training mAP = 0.561670, validation mAP = 0.199024
+2024-11-26 06:56:34.754 | INFO     | model:train:212 - [epoch 279]: training loss = 174385.483293, training mAP = 0.603979, validation mAP = 0.199926
+2024-11-26 06:58:41.567 | INFO     | model:train:212 - [epoch 280]: training loss = 171058.854561, training mAP = 0.633222, validation mAP = 0.205791
+2024-11-26 07:00:48.621 | INFO     | model:train:212 - [epoch 281]: training loss = 172438.504341, training mAP = 0.633401, validation mAP = 0.194169
+2024-11-26 07:02:53.191 | INFO     | model:train:212 - [epoch 282]: training loss = 172091.337482, training mAP = 0.626358, validation mAP = 0.204806
+2024-11-26 07:04:58.811 | INFO     | model:train:212 - [epoch 283]: training loss = 179008.877107, training mAP = 0.603022, validation mAP = 0.195601
+2024-11-26 07:07:04.536 | INFO     | model:train:212 - [epoch 284]: training loss = 181221.593163, training mAP = 0.562050, validation mAP = 0.204156
+2024-11-26 07:09:12.656 | INFO     | model:train:212 - [epoch 285]: training loss = 176374.234792, training mAP = 0.612022, validation mAP = 0.212570
+2024-11-26 07:11:21.681 | INFO     | model:train:212 - [epoch 286]: training loss = 174307.281820, training mAP = 0.611109, validation mAP = 0.199728
+2024-11-26 07:13:28.585 | INFO     | model:train:212 - [epoch 287]: training loss = 172558.589078, training mAP = 0.628208, validation mAP = 0.202862
+2024-11-26 07:15:37.085 | INFO     | model:train:212 - [epoch 288]: training loss = 170652.310824, training mAP = 0.627212, validation mAP = 0.196634
+2024-11-26 07:17:42.626 | INFO     | model:train:212 - [epoch 289]: training loss = 171436.100086, training mAP = 0.644013, validation mAP = 0.197240
+2024-11-26 07:19:47.951 | INFO     | model:train:212 - [epoch 290]: training loss = 168247.700422, training mAP = 0.646488, validation mAP = 0.203287
+2024-11-26 07:21:52.314 | INFO     | model:train:212 - [epoch 291]: training loss = 169999.223748, training mAP = 0.654525, validation mAP = 0.180844
+2024-11-26 07:23:58.496 | INFO     | model:train:212 - [epoch 292]: training loss = 175404.501711, training mAP = 0.589087, validation mAP = 0.201451
+2024-11-26 07:26:04.518 | INFO     | model:train:212 - [epoch 293]: training loss = 178247.022194, training mAP = 0.614063, validation mAP = 0.205674
+2024-11-26 07:28:08.022 | INFO     | model:train:212 - [epoch 294]: training loss = 174153.310910, training mAP = 0.622405, validation mAP = 0.199748
+2024-11-26 07:30:10.999 | INFO     | model:train:212 - [epoch 295]: training loss = 172468.522214, training mAP = 0.617776, validation mAP = 0.180198
+2024-11-26 07:32:14.601 | INFO     | model:train:212 - [epoch 296]: training loss = 173128.151608, training mAP = 0.629037, validation mAP = 0.191946
+2024-11-26 07:34:20.878 | INFO     | model:train:212 - [epoch 297]: training loss = 180953.528796, training mAP = 0.581813, validation mAP = 0.201471
+2024-11-26 07:36:28.879 | INFO     | model:train:212 - [epoch 298]: training loss = 175365.597785, training mAP = 0.618947, validation mAP = 0.185046
+2024-11-26 07:38:34.979 | INFO     | model:train:212 - [epoch 299]: training loss = 167256.809030, training mAP = 0.672864, validation mAP = 0.202971
+2024-11-26 07:40:38.463 | INFO     | model:train:212 - [epoch 300]: training loss = 169998.534144, training mAP = 0.653658, validation mAP = 0.207542
+2024-11-26 07:42:41.231 | INFO     | model:train:212 - [epoch 301]: training loss = 169545.399296, training mAP = 0.656767, validation mAP = 0.178816
+2024-11-26 07:44:42.718 | INFO     | model:train:212 - [epoch 302]: training loss = 162700.049657, training mAP = 0.691756, validation mAP = 0.202043
+2024-11-26 07:46:47.079 | INFO     | model:train:212 - [epoch 303]: training loss = 166787.161058, training mAP = 0.652296, validation mAP = 0.201369
+2024-11-26 07:48:53.439 | INFO     | model:train:212 - [epoch 304]: training loss = 174382.444351, training mAP = 0.626783, validation mAP = 0.198356
+2024-11-26 07:51:01.289 | INFO     | model:train:212 - [epoch 305]: training loss = 166707.742037, training mAP = 0.652858, validation mAP = 0.209732
+2024-11-26 07:53:09.655 | INFO     | model:train:212 - [epoch 306]: training loss = 172920.665704, training mAP = 0.630196, validation mAP = 0.199182
+2024-11-26 07:55:14.331 | INFO     | model:train:212 - [epoch 307]: training loss = 182126.255426, training mAP = 0.575371, validation mAP = 0.190315
+2024-11-26 07:57:17.189 | INFO     | model:train:212 - [epoch 308]: training loss = 172514.408778, training mAP = 0.622028, validation mAP = 0.194834
+2024-11-26 07:59:22.764 | INFO     | model:train:212 - [epoch 309]: training loss = 166677.359919, training mAP = 0.682624, validation mAP = 0.198821
+2024-11-26 08:01:28.963 | INFO     | model:train:212 - [epoch 310]: training loss = 166107.060239, training mAP = 0.668875, validation mAP = 0.183884
+2024-11-26 08:03:36.938 | INFO     | model:train:212 - [epoch 311]: training loss = 162857.388264, training mAP = 0.704589, validation mAP = 0.197507
+2024-11-26 08:05:47.240 | INFO     | model:train:212 - [epoch 312]: training loss = 161506.097641, training mAP = 0.715401, validation mAP = 0.191794
+2024-11-26 08:07:52.304 | INFO     | model:train:212 - [epoch 313]: training loss = 160894.324961, training mAP = 0.707274, validation mAP = 0.187689
+2024-11-26 08:09:55.454 | INFO     | model:train:212 - [epoch 314]: training loss = 164704.495960, training mAP = 0.675448, validation mAP = 0.195126
+2024-11-26 08:11:57.738 | INFO     | model:train:212 - [epoch 315]: training loss = 172694.191506, training mAP = 0.620878, validation mAP = 0.189434
+2024-11-26 08:13:59.278 | INFO     | model:train:212 - [epoch 316]: training loss = 164235.791629, training mAP = 0.691315, validation mAP = 0.186422
+2024-11-26 08:16:05.099 | INFO     | model:train:212 - [epoch 317]: training loss = 161833.885301, training mAP = 0.698111, validation mAP = 0.204569
+2024-11-26 08:18:08.435 | INFO     | model:train:212 - [epoch 318]: training loss = 166057.616809, training mAP = 0.688367, validation mAP = 0.190299
+2024-11-26 08:20:12.261 | INFO     | model:train:212 - [epoch 319]: training loss = 160313.586304, training mAP = 0.707677, validation mAP = 0.203570
+2024-11-26 08:22:16.774 | INFO     | model:train:212 - [epoch 320]: training loss = 164058.089937, training mAP = 0.682283, validation mAP = 0.193374
+2024-11-26 08:24:20.195 | INFO     | model:train:212 - [epoch 321]: training loss = 159840.920446, training mAP = 0.720772, validation mAP = 0.192135
+2024-11-26 08:26:25.890 | INFO     | model:train:212 - [epoch 322]: training loss = 154693.252591, training mAP = 0.746155, validation mAP = 0.190047
+2024-11-26 08:28:29.060 | INFO     | model:train:212 - [epoch 323]: training loss = 154299.666810, training mAP = 0.738295, validation mAP = 0.202600
+2024-11-26 08:30:31.740 | INFO     | model:train:212 - [epoch 324]: training loss = 157988.719941, training mAP = 0.724919, validation mAP = 0.188789
+2024-11-26 08:32:34.279 | INFO     | model:train:212 - [epoch 325]: training loss = 158525.913731, training mAP = 0.735200, validation mAP = 0.187791
+2024-11-26 08:34:40.369 | INFO     | model:train:212 - [epoch 326]: training loss = 161900.094026, training mAP = 0.682828, validation mAP = 0.188301
+2024-11-26 08:36:43.495 | INFO     | model:train:212 - [epoch 327]: training loss = 155959.403083, training mAP = 0.734833, validation mAP = 0.188318
+2024-11-26 08:38:48.073 | INFO     | model:train:212 - [epoch 328]: training loss = 158284.731333, training mAP = 0.715283, validation mAP = 0.187564
+2024-11-26 08:40:51.425 | INFO     | model:train:212 - [epoch 329]: training loss = 165856.502731, training mAP = 0.637452, validation mAP = 0.194904
+2024-11-26 08:42:55.416 | INFO     | model:train:212 - [epoch 330]: training loss = 157810.730249, training mAP = 0.701924, validation mAP = 0.192535
+2024-11-26 08:44:58.426 | INFO     | model:train:212 - [epoch 331]: training loss = 153966.891114, training mAP = 0.758841, validation mAP = 0.191637
+2024-11-26 08:47:01.490 | INFO     | model:train:212 - [epoch 332]: training loss = 152548.769918, training mAP = 0.764596, validation mAP = 0.177686
+2024-11-26 08:49:05.968 | INFO     | model:train:212 - [epoch 333]: training loss = 150176.521124, training mAP = 0.756018, validation mAP = 0.195793
+2024-11-26 08:51:08.727 | INFO     | model:train:212 - [epoch 334]: training loss = 149091.023473, training mAP = 0.774210, validation mAP = 0.201246
+2024-11-26 08:53:13.259 | INFO     | model:train:212 - [epoch 335]: training loss = 147840.446540, training mAP = 0.779029, validation mAP = 0.188023
+2024-11-26 08:55:20.458 | INFO     | model:train:212 - [epoch 336]: training loss = 148205.867768, training mAP = 0.776754, validation mAP = 0.186992
+2024-11-26 08:57:26.931 | INFO     | model:train:212 - [epoch 337]: training loss = 145667.248107, training mAP = 0.781931, validation mAP = 0.194132
+2024-11-26 08:59:33.579 | INFO     | model:train:212 - [epoch 338]: training loss = 146363.923352, training mAP = 0.792157, validation mAP = 0.192308
+2024-11-26 09:01:38.282 | INFO     | model:train:212 - [epoch 339]: training loss = 158155.860732, training mAP = 0.696680, validation mAP = 0.181999
+2024-11-26 09:03:44.815 | INFO     | model:train:212 - [epoch 340]: training loss = 154166.027909, training mAP = 0.745964, validation mAP = 0.189326
+2024-11-26 09:05:53.625 | INFO     | model:train:212 - [epoch 341]: training loss = 147920.032654, training mAP = 0.765339, validation mAP = 0.192814
+2024-11-26 09:08:00.213 | INFO     | model:train:212 - [epoch 342]: training loss = 151933.329824, training mAP = 0.769328, validation mAP = 0.185429
+2024-11-26 09:10:07.614 | INFO     | model:train:212 - [epoch 343]: training loss = 148612.842486, training mAP = 0.781722, validation mAP = 0.183153
+2024-11-26 09:12:11.328 | INFO     | model:train:212 - [epoch 344]: training loss = 148480.100698, training mAP = 0.775286, validation mAP = 0.178533
+2024-11-26 09:14:14.451 | INFO     | model:train:212 - [epoch 345]: training loss = 143427.700346, training mAP = 0.797394, validation mAP = 0.179941
+2024-11-26 09:16:18.225 | INFO     | model:train:212 - [epoch 346]: training loss = 148260.470912, training mAP = 0.775151, validation mAP = 0.186942
+2024-11-26 09:18:21.836 | INFO     | model:train:212 - [epoch 347]: training loss = 163184.537434, training mAP = 0.660510, validation mAP = 0.187317
+2024-11-26 09:20:24.288 | INFO     | model:train:212 - [epoch 348]: training loss = 158265.249398, training mAP = 0.720193, validation mAP = 0.185710
+2024-11-26 09:22:29.693 | INFO     | model:train:212 - [epoch 349]: training loss = 149138.283301, training mAP = 0.770015, validation mAP = 0.190220
+2024-11-26 09:24:33.562 | INFO     | model:train:212 - [epoch 350]: training loss = 163852.233202, training mAP = 0.676976, validation mAP = 0.182581
+2024-11-26 09:26:44.090 | INFO     | model:train:212 - [epoch 351]: training loss = 166910.023227, training mAP = 0.669811, validation mAP = 0.182293
+2024-11-26 09:28:47.751 | INFO     | model:train:212 - [epoch 352]: training loss = 154774.888666, training mAP = 0.735233, validation mAP = 0.190042
+2024-11-26 09:30:52.343 | INFO     | model:train:212 - [epoch 353]: training loss = 144329.708119, training mAP = 0.800531, validation mAP = 0.191029
+2024-11-26 09:32:55.702 | INFO     | model:train:212 - [epoch 354]: training loss = 139825.327024, training mAP = 0.816980, validation mAP = 0.174377
+2024-11-26 09:34:59.514 | INFO     | model:train:212 - [epoch 355]: training loss = 179521.076550, training mAP = 0.606344, validation mAP = 0.186768
+2024-11-26 09:37:02.390 | INFO     | model:train:212 - [epoch 356]: training loss = 163266.323623, training mAP = 0.684954, validation mAP = 0.186162
+2024-11-26 09:39:06.307 | INFO     | model:train:212 - [epoch 357]: training loss = 149242.254988, training mAP = 0.776050, validation mAP = 0.188783
+2024-11-26 09:41:10.631 | INFO     | model:train:212 - [epoch 358]: training loss = 142023.394993, training mAP = 0.817933, validation mAP = 0.187953
+2024-11-26 09:43:14.906 | INFO     | model:train:212 - [epoch 359]: training loss = 140797.729709, training mAP = 0.822646, validation mAP = 0.186665
+2024-11-26 09:45:21.727 | INFO     | model:train:212 - [epoch 360]: training loss = 135283.110287, training mAP = 0.838928, validation mAP = 0.184177
+2024-11-26 09:47:23.444 | INFO     | model:train:212 - [epoch 361]: training loss = 136629.156968, training mAP = 0.835422, validation mAP = 0.190377
+2024-11-26 09:49:29.302 | INFO     | model:train:212 - [epoch 362]: training loss = 137406.887195, training mAP = 0.831169, validation mAP = 0.185896
+2024-11-26 09:51:37.190 | INFO     | model:train:212 - [epoch 363]: training loss = 135175.982827, training mAP = 0.836480, validation mAP = 0.182476
+2024-11-26 09:53:42.889 | INFO     | model:train:212 - [epoch 364]: training loss = 137157.745065, training mAP = 0.832383, validation mAP = 0.183691
+2024-11-26 09:55:48.826 | INFO     | model:train:212 - [epoch 365]: training loss = 132345.928696, training mAP = 0.845572, validation mAP = 0.189309
+2024-11-26 09:57:52.485 | INFO     | model:train:212 - [epoch 366]: training loss = 133592.738537, training mAP = 0.844387, validation mAP = 0.178690
+2024-11-26 09:59:55.438 | INFO     | model:train:212 - [epoch 367]: training loss = 148633.139684, training mAP = 0.757352, validation mAP = 0.192775
+2024-11-26 10:01:57.338 | INFO     | model:train:212 - [epoch 368]: training loss = 153397.619980, training mAP = 0.709802, validation mAP = 0.172643
+2024-11-26 10:04:01.787 | INFO     | model:train:212 - [epoch 369]: training loss = 140136.378428, training mAP = 0.808154, validation mAP = 0.187456
+2024-11-26 10:06:08.484 | INFO     | model:train:212 - [epoch 370]: training loss = 137657.923910, training mAP = 0.835590, validation mAP = 0.186894
+2024-11-26 10:08:11.979 | INFO     | model:train:212 - [epoch 371]: training loss = 139315.938636, training mAP = 0.828052, validation mAP = 0.177744
+2024-11-26 10:10:16.017 | INFO     | model:train:212 - [epoch 372]: training loss = 147342.929146, training mAP = 0.767146, validation mAP = 0.193342
+2024-11-26 10:12:21.720 | INFO     | model:train:212 - [epoch 373]: training loss = 142015.097676, training mAP = 0.807606, validation mAP = 0.181770
+2024-11-26 10:14:26.095 | INFO     | model:train:212 - [epoch 374]: training loss = 135307.884728, training mAP = 0.843819, validation mAP = 0.175530
+2024-11-26 10:16:32.554 | INFO     | model:train:212 - [epoch 375]: training loss = 138865.962957, training mAP = 0.829709, validation mAP = 0.190261
+2024-11-26 10:18:36.533 | INFO     | model:train:212 - [epoch 376]: training loss = 136029.711396, training mAP = 0.835565, validation mAP = 0.193526
+2024-11-26 10:20:40.374 | INFO     | model:train:212 - [epoch 377]: training loss = 134020.868340, training mAP = 0.844898, validation mAP = 0.183789
+2024-11-26 10:22:44.583 | INFO     | model:train:212 - [epoch 378]: training loss = 134505.285135, training mAP = 0.843359, validation mAP = 0.187281
+2024-11-26 10:24:48.965 | INFO     | model:train:212 - [epoch 379]: training loss = 131693.661638, training mAP = 0.849864, validation mAP = 0.185679
+2024-11-26 10:26:53.097 | INFO     | model:train:212 - [epoch 380]: training loss = 133344.665029, training mAP = 0.847163, validation mAP = 0.179716
+2024-11-26 10:28:57.998 | INFO     | model:train:212 - [epoch 381]: training loss = 135973.100233, training mAP = 0.838996, validation mAP = 0.172854
+2024-11-26 10:31:01.812 | INFO     | model:train:212 - [epoch 382]: training loss = 134371.328178, training mAP = 0.844510, validation mAP = 0.189379
+2024-11-26 10:33:07.194 | INFO     | model:train:212 - [epoch 383]: training loss = 129990.628423, training mAP = 0.862128, validation mAP = 0.187239
+2024-11-26 10:35:14.306 | INFO     | model:train:212 - [epoch 384]: training loss = 127628.710775, training mAP = 0.870298, validation mAP = 0.175493
+2024-11-26 10:37:21.790 | INFO     | model:train:212 - [epoch 385]: training loss = 125950.905567, training mAP = 0.877932, validation mAP = 0.175877
+2024-11-26 10:39:26.664 | INFO     | model:train:212 - [epoch 386]: training loss = 129123.536218, training mAP = 0.870783, validation mAP = 0.186458
+2024-11-26 10:41:31.679 | INFO     | model:train:212 - [epoch 387]: training loss = 144438.582428, training mAP = 0.793319, validation mAP = 0.198309
+2024-11-26 10:43:36.408 | INFO     | model:train:212 - [epoch 388]: training loss = 151860.282801, training mAP = 0.734253, validation mAP = 0.173489
+2024-11-26 10:45:47.832 | INFO     | model:train:212 - [epoch 389]: training loss = 137778.518760, training mAP = 0.820741, validation mAP = 0.175178
+2024-11-26 10:47:54.625 | INFO     | model:train:212 - [epoch 390]: training loss = 128762.728592, training mAP = 0.864427, validation mAP = 0.174844
+2024-11-26 10:50:01.071 | INFO     | model:train:212 - [epoch 391]: training loss = 160039.119713, training mAP = 0.719699, validation mAP = 0.179312
+2024-11-26 10:52:05.610 | INFO     | model:train:212 - [epoch 392]: training loss = 140688.778815, training mAP = 0.803643, validation mAP = 0.180792
+2024-11-26 10:54:11.563 | INFO     | model:train:212 - [epoch 393]: training loss = 135762.629896, training mAP = 0.835092, validation mAP = 0.181949
+2024-11-26 10:56:17.698 | INFO     | model:train:212 - [epoch 394]: training loss = 144140.288093, training mAP = 0.785917, validation mAP = 0.174938
+2024-11-26 10:58:31.034 | INFO     | model:train:212 - [epoch 395]: training loss = 187279.662901, training mAP = 0.531575, validation mAP = 0.168498
+2024-11-26 11:00:36.019 | INFO     | model:train:212 - [epoch 396]: training loss = 152569.966097, training mAP = 0.754563, validation mAP = 0.187581
+2024-11-26 11:02:41.359 | INFO     | model:train:212 - [epoch 397]: training loss = 136580.561915, training mAP = 0.842057, validation mAP = 0.190044
+2024-11-26 11:04:48.497 | INFO     | model:train:212 - [epoch 398]: training loss = 130565.666516, training mAP = 0.859745, validation mAP = 0.184422
+2024-11-26 11:06:55.816 | INFO     | model:train:212 - [epoch 399]: training loss = 128452.429961, training mAP = 0.870751, validation mAP = 0.178443
+2024-11-26 11:09:03.448 | INFO     | model:train:212 - [epoch 400]: training loss = 129529.539786, training mAP = 0.868154, validation mAP = 0.182759

@@ -7,8 +7,6 @@ import os
 import argparse
 import random
 
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 seed = 1538574472
@@ -31,20 +29,9 @@ parser.add_argument('--num_f_maps', default='64', type=int)
 
 # Need input
 parser.add_argument('--num_epochs', type=int)
-parser.add_argument('--num_layers_PG', default='11', type=int)
-parser.add_argument('--num_layers_R', default='10', type=int)
-parser.add_argument('--num_R', default='3', type=int)
-
-# david
-parser.add_argument('--bce_pos_weight', type=float, default=1, help='')
-parser.add_argument('--smoothing_weight', type=float, default=0.0)
-parser.add_argument('--smoothing_tau', type=float, default=4.0)
-parser.add_argument('--refinement_input', type=str, default='sigmoid')
-parser.add_argument('--save_best_only', action='store_true')
-parser.add_argument('--save_every', type=int, default=1)
-parser.add_argument('--save_optimizer', action='store_true')
-parser.add_argument('--use_best_model', action='store_true')
-#
+parser.add_argument('--num_layers_PG', type=int)
+parser.add_argument('--num_layers_R', type=int)
+parser.add_argument('--num_R', type=int)
 
 args = parser.parse_args()
 
@@ -64,15 +51,9 @@ sample_rate = 1
 # for 50salads, and up-sample the output to 30 fps
 if args.dataset == "50salads":
     sample_rate = 2
-elif args.dataset == "carom":
-    sample_rate = 1
 
 vid_list_file = "./data/"+args.dataset+"/splits/train.split"+args.split+".bundle"
 vid_list_file_tst = "./data/"+args.dataset+"/splits/test.split"+args.split+".bundle"
-#vid_list_file_tst = "./data/"+args.dataset+"/splits/train.split"+args.split+".bundle"
-# david
-vid_list_file_val = "./data/"+args.dataset+"/splits/val.split"+args.split+".bundle"
-#
 features_path = "./data/"+args.dataset+"/features/"
 gt_path = "./data/"+args.dataset+"/groundTruth/"
 
@@ -94,23 +75,12 @@ for a in actions:
     actions_dict[a.split()[1]] = int(a.split()[0])
 
 num_classes = len(actions_dict)
-trainer = Trainer(args, num_layers_PG, num_layers_R, num_R, num_f_maps, features_dim, num_classes, args.dataset, args.split, device=device)
+trainer = Trainer(num_layers_PG, num_layers_R, num_R, num_f_maps, features_dim, num_classes, args.dataset, args.split)
 if args.action == "train":
     batch_gen = BatchGenerator(num_classes, actions_dict, gt_path, features_path, sample_rate)
     batch_gen.read_data(vid_list_file)
-
-    # david
-    # validate
-    batch_gen_val = BatchGenerator(num_classes, actions_dict, gt_path, features_path, sample_rate)
-    batch_gen_val.read_data(vid_list_file_val)
-    #
-
-    trainer.train(model_dir, batch_gen, batch_gen_val, num_epochs=num_epochs, batch_size=bz, learning_rate=lr, device=device)
+    trainer.train(model_dir, batch_gen, num_epochs=num_epochs, batch_size=bz, learning_rate=lr, device=device)
 
 if args.action == "predict":
-    #trainer.predict(model_dir, results_dir, features_path, vid_list_file_tst, num_epochs, actions_dict, device, sample_rate)
-    trainer.predict(
-        model_dir, results_dir, features_path, vid_list_file_tst, num_epochs,
-        actions_dict, device, sample_rate, gt_path, mapping_file,
-        use_best_model=args.use_best_model
-    )
+    trainer.predict(model_dir, results_dir, features_path, vid_list_file_tst, num_epochs, actions_dict, device, sample_rate)
+

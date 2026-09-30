@@ -1,0 +1,120 @@
+2026-05-13 17:44:49.674 | INFO     | model:train:562 - prob mean 0.276527, max 1.000000, min 0.000000
+2026-05-13 17:44:49.674 | INFO     | model:train:567 - GT positive rate 0.056374
+2026-05-13 17:44:50.665 | INFO     | model:train:589 - [epoch 1]: epoch loss = 4.573617, train mAP = 0.048467, val mAP = 0.055973
+2026-05-13 17:44:57.071 | INFO     | model:train:562 - prob mean 0.226363, max 1.000000, min 0.000000
+2026-05-13 17:44:57.072 | INFO     | model:train:567 - GT positive rate 0.051879
+2026-05-13 17:44:57.995 | INFO     | model:train:589 - [epoch 2]: epoch loss = 1.561628, train mAP = 0.048554, val mAP = 0.049302
+2026-05-13 17:45:04.159 | INFO     | model:train:562 - prob mean 0.259646, max 1.000000, min 0.000000
+2026-05-13 17:45:04.159 | INFO     | model:train:567 - GT positive rate 0.047665
+2026-05-13 17:45:05.099 | INFO     | model:train:589 - [epoch 3]: epoch loss = 1.280504, train mAP = 0.049026, val mAP = 0.050652
+2026-05-13 17:45:13.631 | INFO     | model:train:562 - prob mean 0.175545, max 0.999984, min 0.000000
+2026-05-13 17:45:13.634 | INFO     | model:train:567 - GT positive rate 0.047629
+2026-05-13 17:45:15.764 | INFO     | model:train:589 - [epoch 4]: epoch loss = 1.016897, train mAP = 0.050137, val mAP = 0.051212
+2026-05-13 17:45:25.187 | INFO     | model:train:562 - prob mean 0.228909, max 0.999757, min 0.000000
+2026-05-13 17:45:25.188 | INFO     | model:train:567 - GT positive rate 0.056800
+2026-05-13 17:45:26.209 | INFO     | model:train:589 - [epoch 5]: epoch loss = 0.828300, train mAP = 0.052356, val mAP = 0.052679
+2026-05-13 17:45:32.914 | INFO     | model:train:562 - prob mean 0.163745, max 0.998446, min 0.000000
+2026-05-13 17:45:32.915 | INFO     | model:train:567 - GT positive rate 0.046316
+2026-05-13 17:45:33.974 | INFO     | model:train:589 - [epoch 6]: epoch loss = 0.655690, train mAP = 0.057425, val mAP = 0.055556
+2026-05-13 17:45:40.498 | INFO     | model:train:562 - prob mean 0.126905, max 0.996863, min 0.000005
+2026-05-13 17:45:40.498 | INFO     | model:train:567 - GT positive rate 0.017333
+2026-05-13 17:45:41.525 | INFO     | model:train:589 - [epoch 7]: epoch loss = 0.533043, train mAP = 0.062592, val mAP = 0.057379
+2026-05-13 17:45:48.063 | INFO     | model:train:562 - prob mean 0.166684, max 0.986159, min 0.000003
+2026-05-13 17:45:48.064 | INFO     | model:train:567 - GT positive rate 0.055033
+2026-05-13 17:45:49.124 | INFO     | model:train:589 - [epoch 8]: epoch loss = 0.555985, train mAP = 0.071274, val mAP = 0.059271
+2026-05-13 17:45:56.224 | INFO     | model:train:562 - prob mean 0.300787, max 0.981612, min 0.000019
+2026-05-13 17:45:56.224 | INFO     | model:train:567 - GT positive rate 0.059028
+2026-05-13 17:45:57.546 | INFO     | model:train:589 - [epoch 9]: epoch loss = 0.554192, train mAP = 0.075828, val mAP = 0.061148
+2026-05-13 17:46:04.306 | INFO     | model:train:562 - prob mean 0.212643, max 0.993102, min 0.000022
+2026-05-13 17:46:04.307 | INFO     | model:train:567 - GT positive rate 0.049420
+2026-05-13 17:46:05.373 | INFO     | model:train:589 - [epoch 10]: epoch loss = 0.527167, train mAP = 0.078576, val mAP = 0.062659
+2026-05-13 17:46:12.014 | INFO     | model:train:562 - prob mean 0.254997, max 0.968632, min 0.000071
+2026-05-13 17:46:12.015 | INFO     | model:train:567 - GT positive rate 0.044494
+2026-05-13 17:46:13.083 | INFO     | model:train:589 - [epoch 11]: epoch loss = 0.507024, train mAP = 0.081746, val mAP = 0.063796
+2026-05-13 17:46:19.366 | INFO     | model:train:562 - prob mean 0.272213, max 0.995689, min 0.000037
+2026-05-13 17:46:19.366 | INFO     | model:train:567 - GT positive rate 0.044663
+2026-05-13 17:46:20.353 | INFO     | model:train:589 - [epoch 12]: epoch loss = 0.510110, train mAP = 0.079856, val mAP = 0.066546
+2026-05-13 17:46:27.020 | INFO     | model:train:562 - prob mean 0.156839, max 0.975198, min 0.000138
+2026-05-13 17:46:27.021 | INFO     | model:train:567 - GT positive rate 0.032046
+2026-05-13 17:46:28.420 | INFO     | model:train:589 - [epoch 13]: epoch loss = 0.473743, train mAP = 0.086056, val mAP = 0.068900
+2026-05-13 17:46:34.848 | INFO     | model:train:562 - prob mean 0.108282, max 0.988721, min 0.000065
+2026-05-13 17:46:34.848 | INFO     | model:train:567 - GT positive rate 0.017364
+2026-05-13 17:46:35.820 | INFO     | model:train:589 - [epoch 14]: epoch loss = 0.447724, train mAP = 0.087822, val mAP = 0.070384
+2026-05-13 17:46:42.270 | INFO     | model:train:562 - prob mean 0.186064, max 0.984948, min 0.000024
+2026-05-13 17:46:42.270 | INFO     | model:train:567 - GT positive rate 0.059036
+2026-05-13 17:46:43.473 | INFO     | model:train:589 - [epoch 15]: epoch loss = 0.505011, train mAP = 0.090749, val mAP = 0.072927
+2026-05-13 17:46:50.087 | INFO     | model:train:562 - prob mean 0.221887, max 0.974609, min 0.000053
+2026-05-13 17:46:50.088 | INFO     | model:train:567 - GT positive rate 0.022868
+2026-05-13 17:46:51.058 | INFO     | model:train:589 - [epoch 16]: epoch loss = 0.425284, train mAP = 0.097106, val mAP = 0.074374
+2026-05-13 17:46:57.265 | INFO     | model:train:562 - prob mean 0.226085, max 0.982156, min 0.000099
+2026-05-13 17:46:57.265 | INFO     | model:train:567 - GT positive rate 0.052588
+2026-05-13 17:46:58.339 | INFO     | model:train:589 - [epoch 17]: epoch loss = 0.486976, train mAP = 0.101381, val mAP = 0.075797
+2026-05-13 17:47:04.661 | INFO     | model:train:562 - prob mean 0.184629, max 0.968773, min 0.000055
+2026-05-13 17:47:04.661 | INFO     | model:train:567 - GT positive rate 0.038760
+2026-05-13 17:47:05.681 | INFO     | model:train:589 - [epoch 18]: epoch loss = 0.462417, train mAP = 0.099659, val mAP = 0.076736
+2026-05-13 17:47:12.026 | INFO     | model:train:562 - prob mean 0.147873, max 0.993937, min 0.000083
+2026-05-13 17:47:12.026 | INFO     | model:train:567 - GT positive rate 0.034806
+2026-05-13 17:47:13.069 | INFO     | model:train:589 - [epoch 19]: epoch loss = 0.451931, train mAP = 0.101956, val mAP = 0.078194
+2026-05-13 17:47:19.590 | INFO     | model:train:562 - prob mean 0.198112, max 0.961696, min 0.000069
+2026-05-13 17:47:19.591 | INFO     | model:train:567 - GT positive rate 0.033316
+2026-05-13 17:47:20.619 | INFO     | model:train:589 - [epoch 20]: epoch loss = 0.446498, train mAP = 0.105409, val mAP = 0.079479
+2026-05-13 17:47:27.252 | INFO     | model:train:562 - prob mean 0.250655, max 0.985248, min 0.000068
+2026-05-13 17:47:27.252 | INFO     | model:train:567 - GT positive rate 0.053619
+2026-05-13 17:47:28.398 | INFO     | model:train:589 - [epoch 21]: epoch loss = 0.473449, train mAP = 0.108673, val mAP = 0.082184
+2026-05-13 17:47:35.042 | INFO     | model:train:562 - prob mean 0.196758, max 0.994734, min 0.000053
+2026-05-13 17:47:35.042 | INFO     | model:train:567 - GT positive rate 0.051300
+2026-05-13 17:47:36.141 | INFO     | model:train:589 - [epoch 22]: epoch loss = 0.466058, train mAP = 0.109636, val mAP = 0.082913
+2026-05-13 17:47:42.491 | INFO     | model:train:562 - prob mean 0.158262, max 0.997001, min 0.000041
+2026-05-13 17:47:42.491 | INFO     | model:train:567 - GT positive rate 0.034577
+2026-05-13 17:47:43.584 | INFO     | model:train:589 - [epoch 23]: epoch loss = 0.448648, train mAP = 0.108637, val mAP = 0.083772
+2026-05-13 17:47:49.697 | INFO     | model:train:562 - prob mean 0.221528, max 0.961517, min 0.000113
+2026-05-13 17:47:49.698 | INFO     | model:train:567 - GT positive rate 0.050338
+2026-05-13 17:47:50.634 | INFO     | model:train:589 - [epoch 24]: epoch loss = 0.473874, train mAP = 0.115102, val mAP = 0.085456
+2026-05-13 17:47:56.743 | INFO     | model:train:562 - prob mean 0.243666, max 0.996060, min 0.000056
+2026-05-13 17:47:56.743 | INFO     | model:train:567 - GT positive rate 0.051080
+2026-05-13 17:47:57.816 | INFO     | model:train:589 - [epoch 25]: epoch loss = 0.469554, train mAP = 0.113976, val mAP = 0.086083
+2026-05-13 17:48:04.007 | INFO     | model:train:562 - prob mean 0.178409, max 0.981038, min 0.000026
+2026-05-13 17:48:04.007 | INFO     | model:train:567 - GT positive rate 0.027774
+2026-05-13 17:48:04.952 | INFO     | model:train:589 - [epoch 26]: epoch loss = 0.438745, train mAP = 0.117721, val mAP = 0.086023
+2026-05-13 17:48:10.936 | INFO     | model:train:562 - prob mean 0.249342, max 0.987886, min 0.000019
+2026-05-13 17:48:10.936 | INFO     | model:train:567 - GT positive rate 0.045733
+2026-05-13 17:48:11.928 | INFO     | model:train:589 - [epoch 27]: epoch loss = 0.482052, train mAP = 0.109469, val mAP = 0.088433
+2026-05-13 17:48:17.932 | INFO     | model:train:562 - prob mean 0.245742, max 0.997297, min 0.000058
+2026-05-13 17:48:17.932 | INFO     | model:train:567 - GT positive rate 0.057448
+2026-05-13 17:48:18.870 | INFO     | model:train:589 - [epoch 28]: epoch loss = 0.495248, train mAP = 0.110824, val mAP = 0.089728
+2026-05-13 17:48:24.826 | INFO     | model:train:562 - prob mean 0.153159, max 0.987112, min 0.000002
+2026-05-13 17:48:24.826 | INFO     | model:train:567 - GT positive rate 0.048928
+2026-05-13 17:48:25.766 | INFO     | model:train:589 - [epoch 29]: epoch loss = 0.460105, train mAP = 0.120331, val mAP = 0.089638
+2026-05-13 17:48:31.826 | INFO     | model:train:562 - prob mean 0.243515, max 0.993773, min 0.000002
+2026-05-13 17:48:31.826 | INFO     | model:train:567 - GT positive rate 0.050094
+2026-05-13 17:48:32.790 | INFO     | model:train:589 - [epoch 30]: epoch loss = 0.467530, train mAP = 0.125101, val mAP = 0.092956
+2026-05-13 17:48:38.946 | INFO     | model:train:562 - prob mean 0.220582, max 0.963308, min 0.000032
+2026-05-13 17:48:38.946 | INFO     | model:train:567 - GT positive rate 0.046230
+2026-05-13 17:48:39.972 | INFO     | model:train:589 - [epoch 31]: epoch loss = 0.457926, train mAP = 0.125025, val mAP = 0.095198
+2026-05-13 17:48:46.928 | INFO     | model:train:562 - prob mean 0.189463, max 0.970877, min 0.000026
+2026-05-13 17:48:46.929 | INFO     | model:train:567 - GT positive rate 0.047629
+2026-05-13 17:48:48.957 | INFO     | model:train:589 - [epoch 32]: epoch loss = 0.459637, train mAP = 0.129420, val mAP = 0.096287
+2026-05-13 17:49:00.117 | INFO     | model:train:562 - prob mean 0.139594, max 0.994489, min 0.000011
+2026-05-13 17:49:00.118 | INFO     | model:train:567 - GT positive rate 0.036225
+2026-05-13 17:49:01.215 | INFO     | model:train:589 - [epoch 33]: epoch loss = 0.438243, train mAP = 0.129167, val mAP = 0.095579
+2026-05-13 17:49:07.924 | INFO     | model:train:562 - prob mean 0.210834, max 0.969355, min 0.000052
+2026-05-13 17:49:07.924 | INFO     | model:train:567 - GT positive rate 0.048078
+2026-05-13 17:49:08.850 | INFO     | model:train:589 - [epoch 34]: epoch loss = 0.450570, train mAP = 0.130019, val mAP = 0.094883
+2026-05-13 17:49:15.466 | INFO     | model:train:562 - prob mean 0.154102, max 0.997952, min 0.000053
+2026-05-13 17:49:15.467 | INFO     | model:train:567 - GT positive rate 0.033419
+2026-05-13 17:49:16.543 | INFO     | model:train:589 - [epoch 35]: epoch loss = 0.432972, train mAP = 0.136098, val mAP = 0.097759
+2026-05-13 17:49:23.411 | INFO     | model:train:562 - prob mean 0.200318, max 0.998129, min 0.000023
+2026-05-13 17:49:23.411 | INFO     | model:train:567 - GT positive rate 0.051063
+2026-05-13 17:49:24.378 | INFO     | model:train:589 - [epoch 36]: epoch loss = 0.462233, train mAP = 0.131212, val mAP = 0.101589
+2026-05-13 17:49:31.024 | INFO     | model:train:562 - prob mean 0.149798, max 0.998151, min 0.000021
+2026-05-13 17:49:31.025 | INFO     | model:train:567 - GT positive rate 0.035310
+2026-05-13 17:49:32.057 | INFO     | model:train:589 - [epoch 37]: epoch loss = 0.419006, train mAP = 0.138023, val mAP = 0.103408
+2026-05-13 17:49:38.587 | INFO     | model:train:562 - prob mean 0.196246, max 0.995665, min 0.000004
+2026-05-13 17:49:38.587 | INFO     | model:train:567 - GT positive rate 0.060733
+2026-05-13 17:49:39.727 | INFO     | model:train:589 - [epoch 38]: epoch loss = 0.452215, train mAP = 0.138323, val mAP = 0.102100
+2026-05-13 17:49:46.239 | INFO     | model:train:562 - prob mean 0.164970, max 0.994705, min 0.000016
+2026-05-13 17:49:46.240 | INFO     | model:train:567 - GT positive rate 0.049420
+2026-05-13 17:49:47.205 | INFO     | model:train:589 - [epoch 39]: epoch loss = 0.441432, train mAP = 0.140314, val mAP = 0.101440
+2026-05-13 17:49:53.334 | INFO     | model:train:562 - prob mean 0.173006, max 0.996634, min 0.000027
+2026-05-13 17:49:53.335 | INFO     | model:train:567 - GT positive rate 0.051810
+2026-05-13 17:49:54.293 | INFO     | model:train:589 - [epoch 40]: epoch loss = 0.449246, train mAP = 0.140449, val mAP = 0.103015

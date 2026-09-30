@@ -1,0 +1,12 @@
+2026-05-13 16:26:29.636 | INFO     | model:train:562 - prob mean 0.448857, max 0.755117, min 0.140766
+2026-05-13 16:26:30.741 | INFO     | model:train:587 - [epoch 1]: epoch loss = 2.462543, train mAP = 0.046915, val mAP = 0.046851
+2026-05-13 16:26:38.577 | INFO     | model:train:562 - prob mean 0.378242, max 0.802123, min 0.059366
+2026-05-13 16:26:39.804 | INFO     | model:train:587 - [epoch 2]: epoch loss = 1.782875, train mAP = 0.048029, val mAP = 0.047517
+2026-05-13 16:26:47.508 | INFO     | model:train:562 - prob mean 0.262906, max 0.926513, min 0.006982
+2026-05-13 16:26:48.628 | INFO     | model:train:587 - [epoch 3]: epoch loss = 1.294023, train mAP = 0.048430, val mAP = 0.048325
+2026-05-13 16:26:55.945 | INFO     | model:train:562 - prob mean 0.090220, max 0.995942, min 0.000002
+2026-05-13 16:26:56.951 | INFO     | model:train:587 - [epoch 4]: epoch loss = 0.990520, train mAP = 0.046822, val mAP = 0.048266
+2026-05-13 16:27:04.274 | INFO     | model:train:562 - prob mean 0.045159, max 0.992211, min 0.000000
+2026-05-13 16:27:05.289 | INFO     | model:train:587 - [epoch 5]: epoch loss = 0.916873, train mAP = 0.048380, val mAP = 0.047746
+2026-05-13 16:27:12.477 | INFO     | model:train:562 - prob mean 0.062599, max 0.978348, min 0.000002
+2026-05-13 16:27:13.490 | INFO     | model:train:587 - [epoch 6]: epoch loss = 0.813479, train mAP = 0.048646, val mAP = 0.047441
