@@ -308,6 +308,19 @@ class Trainer:
             save_optimizer = kwargs.get(
                 "save_optimizer", getattr(cfg, "save_optimizer", False)
             )
+            batch_size = kwargs.get(
+                "bz", getattr(cfg, "bz", False)
+            )
+            learning_rate = kwargs.get(
+                "lr", getattr(cfg, "lr", False)
+            )
+            num_epochs = kwargs.get(
+                "num_epochs", getattr(cfg, "num_epochs", False)
+            )
+            stage_diagnostics = kwargs.get(
+                "stage_diagnostics", getattr(cfg, "stage_diagnostics", False)
+            )
+
         else:
             if len(init_args) < 8:
                 raise TypeError(
@@ -334,6 +347,7 @@ class Trainer:
             save_best_only = kwargs.get("save_best_only", False)
             save_every = kwargs.get("save_every", 1)
             save_optimizer = kwargs.get("save_optimizer", False)
+            stage_diagnostics = kwargs.get("stage_diagnostics", False)
 
         self.model = MS_TCN2(
             num_layers_PG,
@@ -359,6 +373,9 @@ class Trainer:
             f"_{refinement_tag}"
             f"_pw{float(bce_pos_weight):g}"
             f"_s{float(smoothing_weight):g}"
+            f"_tau{float(smoothing_tau):g}"
+            f"_lr{float(learning_rate):g}"
+            f"_bz{int(batch_size)}"
         )
 
         # Checkpoint policy.
@@ -368,6 +385,7 @@ class Trainer:
         self.save_best_only = bool(save_best_only)
         self.save_every = int(save_every) if save_every is not None else 0
         self.save_optimizer = bool(save_optimizer)
+        self.stage_diagnostics = bool(stage_diagnostics)
         if self.save_every < 0:
             raise ValueError("save_every must be >= 0. Use 0 to disable periodic epoch checkpoints.")
 
@@ -393,6 +411,10 @@ class Trainer:
         logger.info(f"dataset = {dataset}")
         logger.info(f"split = {split}")
 
+        logger.info(f"batch_size = {batch_size}")
+        logger.info(f"learning_rate = {learning_rate}")
+        logger.info(f"num_epochs = {num_epochs}")
+
         logger.info(f"num_classes = {num_classes}")
         logger.info(f"features_dim = {dim}")
         logger.info(f"num_f_maps = {num_f_maps}")
@@ -406,6 +428,7 @@ class Trainer:
         logger.info(f"bce_pos_weight = {bce_pos_weight}")
         logger.info(f"smoothing_weight = {smoothing_weight}")
         logger.info(f"smoothing_tau = {smoothing_tau}")
+        logger.info(f"stage_diagnostics = {self.stage_diagnostics}")
 
 
     def _prepare_target_and_mask(
@@ -616,7 +639,16 @@ class Trainer:
                     torch.save(optimizer.state_dict(), os.path.join(save_dir, f"epoch-{epoch + 1}.opt"))
 
             if batch_gen_val is not None:
-                val_mAP, _ = self.validate(batch_gen_val, device)
+                if self.stage_diagnostics:
+                    val_mAP, _, stage_results = self.validate(
+                        batch_gen_val,
+                        device,
+                        stage_diagnostics=True,
+                    )
+                else:
+                    val_mAP, _ = self.validate(batch_gen_val, device)
+                    stage_results = None
+
                 if val_mAP > best_val_mAP:
                     best_val_mAP = val_mAP
                     checkpoint_name = f"best_{self.checkpoint_tag}.model"
@@ -630,14 +662,25 @@ class Trainer:
                     )
                     if self.save_optimizer:
                         torch.save(optimizer.state_dict(), os.path.join(save_dir, "best.opt"))
-                logger.info(
-                    f"New best checkpoint saved: "
-                    f"{checkpoint_name}"
-                )
+                    logger.info(
+                        f"New best checkpoint saved: "
+                        f"{checkpoint_name}"
+                    )
+
                 logger.info(
                     "[epoch %d]: epoch loss = %.6f, train mAP = %.6f, val mAP = %.6f"
                     % (epoch + 1, mean_epoch_loss, train_mAP, val_mAP)
                 )
+
+                if self.stage_diagnostics and stage_results is not None:
+                    stage_message = ", ".join(
+                        f"{stage_name} = {stage_results[stage_name]['mAP']:.6f}"
+                        for stage_name in stage_results
+                    )
+                    logger.info(
+                        "[epoch %d]: validation stage mAP: %s"
+                        % (epoch + 1, stage_message)
+                    )
             else:
                 # Without a validation set, best.model is not meaningful.
                 # If save_best_only=True, keep the latest model under last.model.
@@ -650,11 +693,31 @@ class Trainer:
                     % (epoch + 1, mean_epoch_loss, train_mAP)
                 )
 
-    def validate(self, batch_gen, device: Union[str, torch.device]) -> Tuple[float, Dict[int, float]]:
+    def validate(
+        self,
+        batch_gen,
+        device: Union[str, torch.device],
+        stage_diagnostics: bool = False,
+    ):
         device = torch.device(device)
         self.model.eval()
+
+        # Normal validation metric: final stage only.
         per_class_true = {c: [] for c in range(self.num_classes)}
         per_class_scores = {c: [] for c in range(self.num_classes)}
+
+        # Optional stage-wise validation diagnostics.
+        # predictions[0] = PG, predictions[1] = R1, ...
+        stage_names = ["PG"] + [
+            f"R{i + 1}" for i in range(len(self.model.Rs))
+        ]
+        stage_per_class_scores = None
+
+        if stage_diagnostics:
+            stage_per_class_scores = {
+                stage_name: {c: [] for c in range(self.num_classes)}
+                for stage_name in stage_names
+            }
 
         with torch.no_grad():
             while batch_gen.has_next():
@@ -662,11 +725,60 @@ class Trainer:
                 batch_input = batch_input.to(device)
                 target, mask = self._prepare_target_and_mask(batch_target, mask, device)
                 predictions = self.model(batch_input)
-                self._collect_scores(predictions[-1], target, mask, per_class_true, per_class_scores)
+
+                # Keep the original validation behavior for checkpoint selection.
+                self._collect_scores(
+                    predictions[-1],
+                    target,
+                    mask,
+                    per_class_true,
+                    per_class_scores,
+                )
+
+                # Diagnostics only: collect scores from every stage against
+                # the exact same validation targets already stored above.
+                if stage_diagnostics:
+                    mask_cpu = mask.detach().cpu()
+                    for stage_idx, stage_name in enumerate(stage_names):
+                        stage_probs = torch.sigmoid(
+                            predictions[stage_idx]
+                        ).detach().cpu()
+
+                        batch_size, num_classes, _ = stage_probs.shape
+                        for b in range(batch_size):
+                            valid_len = int(mask_cpu[b, 0, :].sum().item())
+                            if valid_len <= 0:
+                                continue
+                            for c in range(num_classes):
+                                stage_per_class_scores[stage_name][c].extend(
+                                    stage_probs[b, c, :valid_len].numpy().tolist()
+                                )
 
         batch_gen.reset()
+
+        val_mAP, per_class_ap = self._compute_map(
+            per_class_true,
+            per_class_scores,
+        )
+
+        stage_results = None
+        if stage_diagnostics:
+            stage_results = {}
+            for stage_name in stage_names:
+                stage_mAP, stage_ap = self._compute_map(
+                    per_class_true,
+                    stage_per_class_scores[stage_name],
+                )
+                stage_results[stage_name] = {
+                    "mAP": stage_mAP,
+                    "per_class_ap": stage_ap,
+                }
+
         self.model.train()
-        return self._compute_map(per_class_true, per_class_scores)
+
+        if stage_diagnostics:
+            return val_mAP, per_class_ap, stage_results
+        return val_mAP, per_class_ap
 
     def predict(
         self,
@@ -682,6 +794,7 @@ class Trainer:
         mapping_file: Optional[str] = None,
         threshold: float = 0.5,
         use_best_model: bool = True,
+        stage_diagnostics: bool = False,
     ) -> Optional[float]:
         """Predict multi-label frame labels and optionally compute test mAP.
 
@@ -695,9 +808,15 @@ class Trainer:
         self.model.to(device)
 
         if use_best_model:
-            model_path = os.path.join(model_dir, "best.model")
+            model_path = os.path.join(
+                model_dir,
+                f"best_{self.checkpoint_tag}.model"
+            )
         else:
-            model_path = os.path.join(model_dir, f"epoch-{epoch}.model")
+            model_path = os.path.join(
+                model_dir,
+                f"epoch-{epoch}_{self.checkpoint_tag}.model"
+            )
         self.model.load_state_dict(torch.load(model_path, map_location=device))
 
         with open(vid_list_file, "r") as file_ptr:
@@ -715,14 +834,69 @@ class Trainer:
         per_class_true = {c: [] for c in range(self.num_classes)}
         per_class_scores = {c: [] for c in range(self.num_classes)}
 
+        # -------------------------------------------------------------------------
+        # Optional stage-wise diagnostics.
+        #
+        # predictions[0] = PG
+        # predictions[1] = R1
+        # predictions[2] = R2
+        # ...
+        #
+        # This is only used for analysis and does not change the model prediction.
+        # -------------------------------------------------------------------------
+        stage_names = ["PG"] + [
+            f"R{i + 1}" for i in range(len(self.model.Rs))
+        ]
+
+        stage_per_class_scores = None
+
+        if stage_diagnostics:
+            if gt_path is None:
+                raise ValueError(
+                    "stage_diagnostics requires gt_path because AP/mAP needs ground truth."
+                )
+
+            stage_per_class_scores = {
+                stage_name: {c: [] for c in range(self.num_classes)}
+                for stage_name in stage_names
+            }
+
+            logger.info(
+                "Stage diagnostics enabled: %s"
+                % ", ".join(stage_names)
+            )
+        #
+
         with torch.no_grad():
             for vid in list_of_vids:
                 features = np.load(os.path.join(features_path, vid.split(".")[0] + ".npy"))
                 features = features[:, ::sample_rate]
 
                 input_x = torch.tensor(features, dtype=torch.float32).unsqueeze(0).to(device)
-                predictions = self.model(input_x)
-                probs = torch.sigmoid(predictions[-1]).detach().cpu().numpy()[0]  # [C, T]
+                # predictions = self.model(input_x)
+                # probs = torch.sigmoid(predictions[-1]).detach().cpu().numpy()[0]  # [C, T]
+
+                predictions = self.model(input_x)  # [S, 1, C, T]
+                # Final-stage prediction.
+                # Normal prediction behavior still uses only the last stage.
+                probs = (
+                    torch.sigmoid(predictions[-1])
+                    .detach()
+                    .cpu()
+                    .numpy()[0]
+                )  # [C, T]
+
+                # Only compute all-stage probabilities when diagnostics is enabled.
+                if stage_diagnostics:
+                    stage_probs = (
+                        torch.sigmoid(predictions)
+                        .detach()
+                        .cpu()
+                        .numpy()[:, 0]
+                    )  # [S, C, T]
+                else:
+                    stage_probs = None
+
 
                 # Optional mAP computation.
                 if gt_path is not None:
@@ -736,10 +910,42 @@ class Trainer:
                     ).T  # [C, T_full]
                     gt_labels = gt_labels[:, ::sample_rate]
 
-                    seq_len = min(probs.shape[1], gt_labels.shape[1])
+                    # seq_len = min(probs.shape[1], gt_labels.shape[1])
+                    # for c in range(self.num_classes):
+                    #     per_class_true[c].extend(gt_labels[c, :seq_len].tolist())
+                    #     per_class_scores[c].extend(probs[c, :seq_len].tolist())
+                    seq_len = min(
+                        probs.shape[1],
+                        gt_labels.shape[1]
+                    )
+
+                    # Ground truth only needs to be stored once because
+                    # all stages are evaluated against exactly the same GT.
                     for c in range(self.num_classes):
-                        per_class_true[c].extend(gt_labels[c, :seq_len].tolist())
-                        per_class_scores[c].extend(probs[c, :seq_len].tolist())
+                        per_class_true[c].extend(
+                            gt_labels[c, :seq_len].tolist()
+                        )
+
+                        # Normal final-stage metric.
+                        per_class_scores[c].extend(
+                            probs[c, :seq_len].tolist()
+                        )
+
+
+                    # -------------------------------------------------------------
+                    # Optional PG / R1 / R2 / R3 score collection.
+                    # -------------------------------------------------------------
+                    if stage_diagnostics:
+                        for stage_idx, stage_name in enumerate(stage_names):
+                            for c in range(self.num_classes):
+                                stage_per_class_scores[stage_name][c].extend(
+                                    stage_probs[
+                                        stage_idx,
+                                        c,
+                                        :seq_len
+                                    ].tolist()
+                                )
+
                 else:
                     seq_len = probs.shape[1]
 
@@ -758,17 +964,100 @@ class Trainer:
                     f_ptr.write("\n".join(recognition))
 
         if gt_path is not None:
-            mAP, per_class_ap = self._compute_map(per_class_true, per_class_scores)
-            results_file = os.path.join(results_dir, "per_class_metrics.txt")
+            mAP, per_class_ap = self._compute_map(
+                per_class_true,
+                per_class_scores
+            )
+
+            results_file = os.path.join(
+                results_dir,
+                "per_class_metrics.txt"
+            )
+
             with open(results_file, "w") as f:
                 f.write("mean mAP:\n")
                 f.write(f"{mAP:.6f}\n")
                 f.write("Per-class AP:\n")
                 f.write("Class\tAP\n")
+
                 for c in range(self.num_classes):
                     action = idx_to_action.get(c, str(c))
                     ap = per_class_ap.get(c, 0.0)
                     f.write(f"{action}\t{ap:.6f}\n")
+
+            # ---------------------------------------------------------
+            # Optional stage-wise diagnostics
+            # ---------------------------------------------------------
+            if stage_diagnostics:
+                stage_results = {}
+
+                for stage_name in stage_names:
+                    stage_mAP, stage_ap = self._compute_map(
+                        per_class_true,
+                        stage_per_class_scores[stage_name]
+                    )
+
+                    stage_results[stage_name] = {
+                        "mAP": stage_mAP,
+                        "per_class_ap": stage_ap,
+                    }
+
+                diagnostic_file = os.path.join(
+                    results_dir,
+                    "stage_diagnostics.txt"
+                )
+
+                with open(diagnostic_file, "w") as f:
+                    f.write("Stage-wise mAP\n")
+                    f.write("====================\n")
+
+                    for stage_name in stage_names:
+                        f.write(
+                            f"{stage_name}\t"
+                            f"{stage_results[stage_name]['mAP']:.6f}\n"
+                        )
+
+                    f.write("\n")
+                    f.write("Per-class AP by stage\n")
+                    f.write("=====================\n")
+
+                    f.write("Class")
+                    for stage_name in stage_names:
+                        f.write(f"\t{stage_name}")
+                    f.write("\n")
+
+                    for c in range(self.num_classes):
+                        action = idx_to_action.get(c, str(c))
+                        f.write(action)
+
+                        for stage_name in stage_names:
+                            ap = stage_results[
+                                stage_name
+                            ]["per_class_ap"].get(c, 0.0)
+
+                            f.write(f"\t{ap:.6f}")
+
+                        f.write("\n")
+
+                logger.info("=" * 80)
+                logger.info("Stage-wise diagnostics")
+
+                for stage_name in stage_names:
+                    logger.info(
+                        "%s mAP = %.6f"
+                        % (
+                            stage_name,
+                            stage_results[stage_name]["mAP"],
+                        )
+                    )
+
+                logger.info(
+                    "Stage diagnostic report saved to: %s"
+                    % diagnostic_file
+                )
+                logger.info("=" * 80)
+
+            # 要在 diagnostics 做完之後才能 return
             return mAP
 
         return None

@@ -8,7 +8,7 @@ import argparse
 import random
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 seed = 1538574472
@@ -26,7 +26,6 @@ parser.add_argument('--features_dim', default='2048', type=int)
 parser.add_argument('--bz', default='1', type=int)
 parser.add_argument('--lr', default='0.0005', type=float)
 
-
 parser.add_argument('--num_f_maps', default='64', type=int)
 
 # Need input
@@ -37,13 +36,19 @@ parser.add_argument('--num_R', default='3', type=int)
 
 # david
 parser.add_argument('--bce_pos_weight', type=float, default=1, help='')
-parser.add_argument('--smoothing_weight', type=float, default=0.0)
+parser.add_argument('--smoothing_weight', type=float, default=0.15)
 parser.add_argument('--smoothing_tau', type=float, default=4.0)
 parser.add_argument('--refinement_input', type=str, default='sigmoid')
 parser.add_argument('--save_best_only', action='store_true')
 parser.add_argument('--save_every', type=int, default=1)
 parser.add_argument('--save_optimizer', action='store_true')
 parser.add_argument('--use_best_model', action='store_true')
+
+parser.add_argument(
+    '--stage_diagnostics',
+    action='store_true',
+    help='Output stage-wise PG/R mAP and per-class AP for diagnosis.'
+)
 #
 
 args = parser.parse_args()
