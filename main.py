@@ -8,7 +8,7 @@ import argparse
 import random
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "3"
+os.environ["CUDA_VISIBLE_DEVICES"] = "4"
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 seed = 1538574472
@@ -43,6 +43,7 @@ parser.add_argument('--save_best_only', action='store_true')
 parser.add_argument('--save_every', type=int, default=1)
 parser.add_argument('--save_optimizer', action='store_true')
 parser.add_argument('--use_best_model', action='store_true')
+parser.add_argument('--predict_model_path', type=str, default=None)
 
 parser.add_argument(
     '--stage_diagnostics',
@@ -91,9 +92,11 @@ if not os.path.exists(model_dir):
 if not os.path.exists(results_dir):
     os.makedirs(results_dir)
 
-file_ptr = open(mapping_file, 'r')
-actions = file_ptr.read().split('\n')[:-1]
-file_ptr.close()
+with open(mapping_file, 'r') as f:
+    actions = [
+        line.strip() for line in f if line.strip()
+    ]
+
 actions_dict = dict()
 for a in actions:
     actions_dict[a.split()[1]] = int(a.split()[0])
@@ -103,19 +106,30 @@ trainer = Trainer(args, num_layers_PG, num_layers_R, num_R, num_f_maps, features
 if args.action == "train":
     batch_gen = BatchGenerator(num_classes, actions_dict, gt_path, features_path, sample_rate)
     batch_gen.read_data(vid_list_file)
+    print(f"Train videos: {len(batch_gen.list_of_examples)}")
 
     # david
     # validate
     batch_gen_val = BatchGenerator(num_classes, actions_dict, gt_path, features_path, sample_rate)
     batch_gen_val.read_data(vid_list_file_val)
+    print(f"Val videos: {len(batch_gen_val.list_of_examples)}")
     #
 
     trainer.train(model_dir, batch_gen, batch_gen_val, num_epochs=num_epochs, batch_size=bz, learning_rate=lr, device=device)
 
+# if args.action == "predict":
+#     #trainer.predict(model_dir, results_dir, features_path, vid_list_file_tst, num_epochs, actions_dict, device, sample_rate)
+#     trainer.predict(
+#         model_dir, results_dir, features_path, vid_list_file_tst, num_epochs,
+#         actions_dict, device, sample_rate, gt_path, mapping_file,
+#         use_best_model=args.use_best_model
+#     )
 if args.action == "predict":
-    #trainer.predict(model_dir, results_dir, features_path, vid_list_file_tst, num_epochs, actions_dict, device, sample_rate)
     trainer.predict(
-        model_dir, results_dir, features_path, vid_list_file_tst, num_epochs,
-        actions_dict, device, sample_rate, gt_path, mapping_file,
-        use_best_model=args.use_best_model
+        model_dir, results_dir, features_path, vid_list_file_val,
+        num_epochs, actions_dict, device, sample_rate,
+        gt_path, mapping_file,
+        use_best_model=args.use_best_model,
+        stage_diagnostics=args.stage_diagnostics,
+        model_path=args.predict_model_path
     )

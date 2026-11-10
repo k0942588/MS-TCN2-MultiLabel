@@ -25,9 +25,11 @@ class BatchGenerator(object):
         return False
 
     def read_data(self, vid_list_file):
-        file_ptr = open(vid_list_file, 'r')
-        self.list_of_examples = file_ptr.read().split('\n')[:-1]
-        file_ptr.close()
+        with open(vid_list_file, 'r') as f:
+            self.list_of_examples = [
+                line.strip() for line in f if line.strip()
+            ]
+
         random.shuffle(self.list_of_examples)
 
     def next_batch(self, batch_size):
@@ -38,9 +40,10 @@ class BatchGenerator(object):
         batch_target = []
         for vid in batch:
             features = np.load(self.features_path + vid.split('.')[0] + '.npy')
-            file_ptr = open(self.gt_path + vid, 'r')
-            content = file_ptr.read().split('\n')[:-1]
-            file_ptr.close()
+            with open(self.gt_path + vid, 'r') as f:
+                content = [
+                    line.strip() for line in f if line.strip()
+                ]
             num_frames = min(np.shape(features)[1], len(content))
             classes = np.zeros((num_frames, self.num_classes))
             for i in range(num_frames):

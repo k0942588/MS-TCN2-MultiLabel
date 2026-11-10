@@ -795,6 +795,7 @@ class Trainer:
         threshold: float = 0.5,
         use_best_model: bool = True,
         stage_diagnostics: bool = False,
+        model_path: Optional[str] = None,
     ) -> Optional[float]:
         """Predict multi-label frame labels and optionally compute test mAP.
 
@@ -807,26 +808,36 @@ class Trainer:
         self.model.eval()
         self.model.to(device)
 
-        if use_best_model:
-            model_path = os.path.join(
-                model_dir,
-                f"best_{self.checkpoint_tag}.model"
-            )
-        else:
-            model_path = os.path.join(
-                model_dir,
-                f"epoch-{epoch}_{self.checkpoint_tag}.model"
-            )
-        self.model.load_state_dict(torch.load(model_path, map_location=device))
+        if model_path is None:
+            if use_best_model:
+                model_path = os.path.join(
+                    model_dir,
+                    f"best_{self.checkpoint_tag}.model"
+                )
+            else:
+                model_path = os.path.join(
+                    model_dir,
+                    f"epoch-{epoch}_{self.checkpoint_tag}.model"
+                )
 
-        with open(vid_list_file, "r") as file_ptr:
-            list_of_vids = file_ptr.read().split("\n")[:-1]
+        logger.info(f"Loading prediction model: {model_path}")
+
+        self.model.load_state_dict(
+            torch.load(model_path, map_location=device)
+        )
+
+        with open(vid_list_file, "r") as f:
+            list_of_vids = [
+                line.strip() for line in f if line.strip()
+            ]
 
         idx_to_action = {idx: action for action, idx in actions_dict.items()}
         if mapping_file is not None:
             idx_to_action = {}
-            with open(mapping_file, "r") as file_ptr:
-                actions = file_ptr.read().split("\n")[:-1]
+            with open(mapping_file, "r") as f:
+                actions = [
+                    line.strip() for line in f if line.strip()
+                ]
             for line in actions:
                 idx, action_name = line.split()[:2]
                 idx_to_action[int(idx)] = action_name
@@ -901,8 +912,10 @@ class Trainer:
                 # Optional mAP computation.
                 if gt_path is not None:
                     gt_file = os.path.join(gt_path, vid.split("/")[-1].split(".")[0] + ".txt")
-                    with open(gt_file, "r") as file_ptr:
-                        gt_content = file_ptr.read().split("\n")[:-1]
+                    with open(gt_file, "r") as f:
+                        gt_content = [
+                            line.strip() for line in f if line.strip()
+                        ]
 
                     gt_labels = np.asarray(
                         [list(map(int, line.split())) for line in gt_content],
@@ -914,6 +927,12 @@ class Trainer:
                     # for c in range(self.num_classes):
                     #     per_class_true[c].extend(gt_labels[c, :seq_len].tolist())
                     #     per_class_scores[c].extend(probs[c, :seq_len].tolist())
+                    if probs.shape[1] != gt_labels.shape[1]:
+                        raise ValueError(
+                            f"{vid}: Feature/GT length mismatch: "
+                            f"Feature={probs.shape[1]}, "
+                            f"GT={gt_labels.shape[1]}"
+                        )
                     seq_len = min(
                         probs.shape[1],
                         gt_labels.shape[1]
