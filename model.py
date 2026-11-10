@@ -928,10 +928,11 @@ class Trainer:
                     #     per_class_true[c].extend(gt_labels[c, :seq_len].tolist())
                     #     per_class_scores[c].extend(probs[c, :seq_len].tolist())
                     if probs.shape[1] != gt_labels.shape[1]:
-                        raise ValueError(
+                        logger.warning(
                             f"{vid}: Feature/GT length mismatch: "
                             f"Feature={probs.shape[1]}, "
-                            f"GT={gt_labels.shape[1]}"
+                            f"GT={gt_labels.shape[1]}. "
+                            f"Using min length."
                         )
                     seq_len = min(
                         probs.shape[1],

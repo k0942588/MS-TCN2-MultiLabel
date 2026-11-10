@@ -6,9 +6,9 @@ from batch_gen import BatchGenerator
 import os
 import argparse
 import random
+import re
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "4"
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 seed = 1538574472
@@ -45,6 +45,15 @@ parser.add_argument('--save_optimizer', action='store_true')
 parser.add_argument('--use_best_model', action='store_true')
 parser.add_argument('--predict_model_path', type=str, default=None)
 
+# Choose splits and output folders from train.sh / predict.sh.
+parser.add_argument('--split_dir', type=str, default=None)
+parser.add_argument('--train_set', type=str, default='train')
+parser.add_argument('--val_set', type=str, default='val')
+parser.add_argument('--test_set', type=str, default='test')
+parser.add_argument('--predict_set', type=str, default='val')
+parser.add_argument('--model_dir', type=str, default=None)
+parser.add_argument('--results_dir', type=str, default=None)
+
 parser.add_argument(
     '--stage_diagnostics',
     action='store_true',
@@ -53,6 +62,22 @@ parser.add_argument(
 #
 
 args = parser.parse_args()
+
+# Checkpoints may have a different refinement architecture than main.py defaults.
+# Example: best_R1_logits_pw1_s0.15_tau4_lr0.0003_bz1.model
+if args.action == 'predict' and args.predict_model_path:
+    checkpoint_name = os.path.basename(args.predict_model_path)
+    match = re.search(r'(?:^|_)R(\d+)_(sigmoid|logits|PGonly)(?:_|\.|$)', checkpoint_name)
+    if match:
+        args.num_R = int(match.group(1))
+        args.refinement_input = (
+            'sigmoid' if match.group(2) == 'PGonly' else match.group(2)
+        )
+        print(f"Checkpoint architecture: num_R={args.num_R}, "
+              f"refinement_input={args.refinement_input}")
+    else:
+        print('WARNING: Cannot infer architecture from checkpoint filename; '
+              'using --num_R and --refinement_input')
 
 num_epochs = args.num_epochs
 features_dim = args.features_dim
@@ -73,19 +98,20 @@ if args.dataset == "50salads":
 elif args.dataset == "carom":
     sample_rate = 1
 
-vid_list_file = "./data/"+args.dataset+"/splits/train.split"+args.split+".bundle"
-vid_list_file_tst = "./data/"+args.dataset+"/splits/test.split"+args.split+".bundle"
-#vid_list_file_tst = "./data/"+args.dataset+"/splits/train.split"+args.split+".bundle"
+split_dir = args.split_dir or "./data/"+args.dataset+"/splits"
+vid_list_file = os.path.join(split_dir, args.train_set+".split"+args.split+".bundle")
+vid_list_file_tst = os.path.join(split_dir, args.test_set+".split"+args.split+".bundle")
 # david
-vid_list_file_val = "./data/"+args.dataset+"/splits/val.split"+args.split+".bundle"
+vid_list_file_val = os.path.join(split_dir, args.val_set+".split"+args.split+".bundle")
+vid_list_file_predict = os.path.join(split_dir, args.predict_set+".split"+args.split+".bundle")
 #
 features_path = "./data/"+args.dataset+"/features/"
 gt_path = "./data/"+args.dataset+"/groundTruth/"
 
 mapping_file = "./data/"+args.dataset+"/mapping.txt"
 
-model_dir = "./models/"+args.dataset+"/split_"+args.split
-results_dir = "./results/"+args.dataset+"/split_"+args.split
+model_dir = args.model_dir or "./models/"+args.dataset+"/split_"+args.split
+results_dir = args.results_dir or "./results/"+args.dataset+"/split_"+args.split
 
 if not os.path.exists(model_dir):
     os.makedirs(model_dir)
@@ -126,7 +152,7 @@ if args.action == "train":
 #     )
 if args.action == "predict":
     trainer.predict(
-        model_dir, results_dir, features_path, vid_list_file_val,
+        model_dir, results_dir, features_path, vid_list_file_predict,
         num_epochs, actions_dict, device, sample_rate,
         gt_path, mapping_file,
         use_best_model=args.use_best_model,
