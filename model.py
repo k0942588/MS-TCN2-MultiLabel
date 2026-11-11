@@ -921,6 +921,10 @@ class Trainer:
                         [list(map(int, line.split())) for line in gt_content],
                         dtype=np.float32,
                     ).T  # [C, T_full]
+
+                    # Select only the classes used by the model.
+                    gt_labels = gt_labels[:self.num_classes, :]
+                    
                     gt_labels = gt_labels[:, ::sample_rate]
 
                     # seq_len = min(probs.shape[1], gt_labels.shape[1])

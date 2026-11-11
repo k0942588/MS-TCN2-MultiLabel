@@ -8,15 +8,22 @@ set -euo pipefail
 # PREDICT_MODEL="train_aug"                     -> every .model in that folder
 # PREDICT_MODEL="no_aug"                        -> every .model in that folder
 # PREDICT_MODEL="train_aug/best_R3_sigmoid_pw1_s0.15_tau4_lr0.0003_bz1.model"
-PREDICT_MODEL="no_aug"    # default follows TRAIN_SET="train" in train.sh
+PREDICT_MODEL="train_aug"    # default follows TRAIN_SET="train" in train.sh
 PREDICT_SET="val"             # val / val_aug / test / test_aug
+LABEL_SET="vehicle"             # all=32 classes; vehicle=24 classes (0..23)
 
 GPU_ID=4
 DATASET="carom"
 SPLIT=1
 SPLIT_DIR="./data/carom/splits"
-MODEL_ROOT="./models/carom/split_1"
-RESULTS_ROOT="./results/carom/split_1"
+# Keep older 32-class locations unchanged; separate 24-class results.
+if [[ "$LABEL_SET" == "vehicle" ]]; then
+  MODEL_ROOT="./models/$DATASET/split_$SPLIT/vehicle"
+  RESULTS_ROOT="./results/$DATASET/split_$SPLIT/vehicle"
+else
+  MODEL_ROOT="./models/$DATASET/split_$SPLIT"
+  RESULTS_ROOT="./results/$DATASET/split_$SPLIT"
+fi
 
 # Must match the architecture used when training (not stored in standard tag).
 NUM_LAYERS_PG=11
@@ -29,7 +36,7 @@ FEATURES_DIM=2048
 DEFAULT_NUM_R=3
 DEFAULT_REFINEMENT_INPUT="sigmoid"
 
-STAGE_DIAGNOSTICS=true  # true / false
+STAGE_DIAGNOSTICS=false  # true / false
 
 ROOT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT_DIR"
@@ -74,6 +81,7 @@ if [[ "$STAGE_DIAGNOSTICS" == "true" ]]; then
 fi
 
 echo "GPU: $GPU_ID"
+echo "Label set: $LABEL_SET"
 echo "Prediction split: $PREDICT_SET"
 echo "Model selection:  $MODEL_TARGET"
 echo "Checkpoints: ${#CHECKPOINTS[@]}"
@@ -91,6 +99,7 @@ for checkpoint in "${CHECKPOINTS[@]}"; do
 
   python main.py \
     --action predict \
+    --label_set "$LABEL_SET" \
     --dataset "$DATASET" \
     --split "$SPLIT" \
     --split_dir "$SPLIT_DIR" \

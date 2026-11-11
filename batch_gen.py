@@ -48,7 +48,14 @@ class BatchGenerator(object):
             classes = np.zeros((num_frames, self.num_classes))
             for i in range(num_frames):
                 labels_list = list(map(int, content[i].split()))
-                classes[i] = labels_list
+                # CAROM keeps the original 32-column GT files.
+                # For vehicle-only training select mapping indices 0..23.
+                if len(labels_list) < self.num_classes:
+                    raise ValueError(
+                        f"{vid} frame {i}: GT has {len(labels_list)} columns, "
+                        f"but model expects {self.num_classes} classes"
+                    )
+                classes[i] = labels_list[:self.num_classes]
             batch_input.append(features[:, :num_frames:self.sample_rate])
             batch_target.append(classes[:num_frames:self.sample_rate])
 

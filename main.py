@@ -45,6 +45,9 @@ parser.add_argument('--save_optimizer', action='store_true')
 parser.add_argument('--use_best_model', action='store_true')
 parser.add_argument('--predict_model_path', type=str, default=None)
 
+# CAROM 32-class (all) or 24-class (vehicle: indices 0..23).
+parser.add_argument('--label_set', choices=['all', 'vehicle'], default='all')
+
 # Choose splits and output folders from train.sh / predict.sh.
 parser.add_argument('--split_dir', type=str, default=None)
 parser.add_argument('--train_set', type=str, default='train')
@@ -110,8 +113,14 @@ gt_path = "./data/"+args.dataset+"/groundTruth/"
 
 mapping_file = "./data/"+args.dataset+"/mapping.txt"
 
-model_dir = args.model_dir or "./models/"+args.dataset+"/split_"+args.split
-results_dir = args.results_dir or "./results/"+args.dataset+"/split_"+args.split
+# Keep the original all-class paths; isolate vehicle-only experiments.
+base_model_dir = "./models/"+args.dataset+"/split_"+args.split
+base_results_dir = "./results/"+args.dataset+"/split_"+args.split
+if args.label_set == 'vehicle':
+    base_model_dir = os.path.join(base_model_dir, 'vehicle')
+    base_results_dir = os.path.join(base_results_dir, 'vehicle')
+model_dir = args.model_dir or base_model_dir
+results_dir = args.results_dir or base_results_dir
 
 if not os.path.exists(model_dir):
     os.makedirs(model_dir)
@@ -127,7 +136,22 @@ actions_dict = dict()
 for a in actions:
     actions_dict[a.split()[1]] = int(a.split()[0])
 
+# Vehicle classes in the existing mapping.txt are indices 0-23.
+# GT files remain 32 columns; batch_gen.py and model.py select the first C.
+if args.label_set == 'vehicle':
+    if args.dataset != 'carom':
+        raise ValueError('--label_set vehicle is only defined for dataset carom')
+    vehicle_ids = set(range(24))
+    mapping_ids = set(actions_dict.values())
+    if not vehicle_ids.issubset(mapping_ids):
+        raise ValueError('mapping.txt is missing CAROM vehicle indices 0..23')
+    actions_dict = {
+        action: idx for action, idx in actions_dict.items()
+        if idx in vehicle_ids
+    }
+
 num_classes = len(actions_dict)
+print(f"Label set: {args.label_set}, num_classes: {num_classes}")
 trainer = Trainer(args, num_layers_PG, num_layers_R, num_R, num_f_maps, features_dim, num_classes, args.dataset, args.split, device=device)
 if args.action == "train":
     batch_gen = BatchGenerator(num_classes, actions_dict, gt_path, features_path, sample_rate)

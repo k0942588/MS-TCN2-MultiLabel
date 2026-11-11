@@ -4,21 +4,22 @@ set -euo pipefail
 # ==========================================
 # MS-TCN2 MultiLabel training configuration
 # ==========================================
-GPU_ID=4
+GPU_ID=5
 DATASET="carom"
 SPLIT=1
 SPLIT_DIR="./data/carom/splits"
+LABEL_SET="vehicle"      # all = 32 labels; vehicle = indices 0..23 (24 labels)
 
-TRAIN_SET="train"       # train / train_aug
-VAL_SET="val"           # val / val_aug
+TRAIN_SET="train_aug"       # train / train_aug
+VAL_SET="val_aug"           # val / val_aug
 
-NUM_EPOCHS=300
+NUM_EPOCHS=500
 NUM_LAYERS_PG=11
 NUM_LAYERS_R=10
 NUM_R=3
 NUM_F_MAPS=64
-LR=0.0007
-POS_WEIGHT=1
+LR=0.0003
+POS_WEIGHT=5
 BATCH_SIZE=1
 REFINEMENT_INPUT="sigmoid"
 
@@ -28,7 +29,12 @@ if [[ "$TRAIN_SET" == "train_aug" ]]; then
 else
   MODEL_GROUP="no_aug"
 fi
-MODEL_DIR="./models/$DATASET/split_$SPLIT/$MODEL_GROUP"
+# 32-class paths stay unchanged, while 24-class checkpoints are isolated.
+if [[ "$LABEL_SET" == "vehicle" ]]; then
+  MODEL_DIR="./models/$DATASET/split_$SPLIT/vehicle/$MODEL_GROUP"
+else
+  MODEL_DIR="./models/$DATASET/split_$SPLIT/$MODEL_GROUP"
+fi
 
 # Run from repository root (same folder as main.py).
 ROOT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
@@ -50,6 +56,7 @@ done
 export CUDA_VISIBLE_DEVICES="$GPU_ID"
 
 echo "GPU: $GPU_ID"
+echo "Label set: $LABEL_SET"
 echo "Train: ${TRAIN_SET}.split${SPLIT}.bundle"
 echo "Val:   ${VAL_SET}.split${SPLIT}.bundle"
 echo "Length policy: min(Feature, GT) in batch_gen.py"
@@ -57,6 +64,7 @@ echo "Model output: $MODEL_DIR"
 
 python main.py \
   --action train \
+  --label_set "$LABEL_SET" \
   --dataset "$DATASET" \
   --split "$SPLIT" \
   --split_dir "$SPLIT_DIR" \
